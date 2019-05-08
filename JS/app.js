@@ -3,7 +3,6 @@ var respuesta  = document.getElementById('respuesta');
 
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
-    console.log('mefksdfkjdkfskdjfklsd');
     var datos = new FormData(formulario);
 
     fetch('post.php', {

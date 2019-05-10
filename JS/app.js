@@ -5,7 +5,7 @@ formulario.addEventListener('submit', function(e){
     e.preventDefault();
     var datos = new FormData(formulario);
 
-    fetch('post.php', {
+    fetch('php/post.php', {
         method:'POST',
         body:datos
         })  

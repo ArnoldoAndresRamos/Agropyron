@@ -1,4 +1,15 @@
 <?php
+$temperatura_max      = $_POST['temperatura_max'];
+$temperatura_min      = $_POST['temperatura_min'];
+$humeded_relativa_max = $_POST['humeded_relativa_max'];
+$humeded_relativa_min = $_POST['humeded_relativa_min'];
+$velocidadViento      = $_POST['velocidadViento'];
+$duracionDia          = $_POST['duracionDia'];
+
+$fecha       = $_POST['fecha'];
+$latitud     = $_POST['latitud'];
+$duracionDia = $_POST['duracionDia'];
+
 $usuario = $_POST['usuario'];
 $pass    = $_POST['pass'];
 

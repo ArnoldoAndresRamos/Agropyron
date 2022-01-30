@@ -15,10 +15,10 @@ $duracionDia = $_POST['duracionDia'];
 $usuario = $_POST['usuario'];
 $pass    = $_POST['pass'];
 
-if($usuario ==='' || $pass ===''){
+if($temperatura_max ==='' || $temperatura_min ===''){
     echo json_encode('error');
 }else{
-    echo json_encode('usuario: '.$usuario.'<br> pass: '.$pass);
+    echo json_encode('usuario: '.$temperatura_max.'<br> pass: '.$temperatura_min);
     echo json_encode(
         "t_max".$temperatura_max."t_min".$temperatura_min."hr_max".$humeded_relativa_max."hr_max".$humeded_relativa_min;
     );

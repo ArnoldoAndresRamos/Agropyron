@@ -11,7 +11,7 @@ $latitud     = $_POST['latitud'];
 $duracionDia = $_POST['duracionDia'];
 
 //echo json_encode('usuario: '.$usuario.'<br> pass: '.$pass);
-echo temperatura_max ,"sdfdsf", temperatura_min ,humeded_relativa_max , humeded_relativa_min;
+echo $temperatura_max ,"sdfdsf", $temperatura_min ,$humeded_relativa_max , $humeded_relativa_min;
 $usuario = $_POST['usuario'];
 $pass    = $_POST['pass'];
 

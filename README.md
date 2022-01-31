@@ -1,2 +1,2 @@
 # Agropyron 
-desarrollo de una plataforma web para despliege de aplicaciones para la agricultura 
+proyecto para el desarrollo de una plataforma web con aplicaciones para la agricultura. 

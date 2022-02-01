@@ -1,2 +1,4 @@
 # Agropyron 
-proyecto para el desarrollo de una plataforma web con aplicaciones para la agricultura. 
+proyecto para el desarrollo de una plataforma web
+
+El objetivo principal es presentar un kit de herramientas en línea para para la agricultura principalmente riego.

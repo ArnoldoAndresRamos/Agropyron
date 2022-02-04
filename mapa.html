@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- mapa openlayer -->
+      <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+      
+      <script src="https://unpkg.com/elm-pep@1.0.6/src/elm-pep.js"></script>
+      <!-- The lines below are only needed for old environments like Internet Explorer and Android 4.x -->
+      <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,TextDecoder"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
+      
+      <script src="./mapa/v6.12.0-dist/ol.js"></script>
+      <link rel="stylesheet" href="./mapa/v6.12.0-dist/ol.css">
+      <link rel="stylesheet" href="./css-mapa/mapa.css">
+
+      <link rel="stylesheet" href="./css-formulario/formulario.css">
+
+      
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="imagenAgropyron__1_-removebg-preview.png" alt="" width="100%" height="100" >
+            <button value="1" onclick="formulario_ET0(this.value)">ETO</button>
+          </a>
+        </div>
+      </nav>
+
+     
+      <div id="map" class="map" style="display: block;"></div>
+      <div id="popup" class="ol-popup">
+        
+        <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+        <div>
+            <input type="date" id="" name="fecha" placeholder="en grados celsius">
+            <input type="number" id="latitud_popup" name="latitud" placeholder="latitud">
+            <input type="number" id="" name="fecha" placeholder="en grados celsius">
+            <input type="number" id="" name="fecha" placeholder="en grados celsius">
+            <input type="number" id="" name="fecha" placeholder="en grados celsius">
+        </div>
+        <div id="popup-content"></div>
+      </div>
+
+
+
+
+      <script >
+        var i = 0
+          function formulario_ET0(valor){
+              var divA = document.getElementById('formulario_ET0');
+              if (valor=="1"){
+                    divA.style.display="block";
+                    i = i + 1;
+                  }
+              if(i>1){
+                divA.style.display="none";
+                i=0
+              }
+            console.log(i)   
+            }  
+                                
+      </script>
+      
+      
+
+      <!-- Formulario -->
+        <div  class="contenedor" id="formulario_ET0" valuer="1" style=" display: none">
+
+            <form  action="";>
+
+             <div>
+              <div>
+                <label for="number">fecha</label>
+              </div>
+              <div>
+                <input type="date" id="" name="fecha" placeholder="en grados celsius">
+              </div>
+            </div>
+
+     
+  
+
+             <div>
+                <div>
+                  <label for="number">latitud</label>
+                </div>
+                <div>
+                  <input type="number" id="latitud" value="" name="latitud" placeholder="grados decimales">
+                </div>
+              </div>
+
+            <div>
+              <div>
+                <label for="number">altitud</label>
+              </div>
+              <div>
+                <input type="date" id="" name="fecha" placeholder="m.s.n.m">
+              </div>
+            </div>
+
+
+            <!-- radicion solar oculto -->
+            <script >
+              var i = 0
+                function radiacionSolar_si(valor){
+                    var divA = document.getElementById('F');
+                    if (valor=="Radiacion Solar"){
+                          divA.style.display="block";
+                          i = i + 1;
+                        }
+                    if(i>1){
+                      divA.style.display="none";
+                      i=0
+                    }
+                  console.log(i)   
+                  }  
+                                      
+            </script>
+
+            <div>
+                <div>
+                    <input  class= "radio A" type="button" name="datos de Rs" id="A" value="Radiacion Solar" onclick="radiacionSolar_si(this.value)">
+                </div>
+            </div>
+
+            <div id="F" style="display: none;">
+                <div>
+                  <input type="number" id="" name="radiacionSolar" placeholder="kj/m2/dia">
+                </div>
+              </div>
+            <!-- fin radicion solar oculto -->
+
+
+            
+            <div>
+              <div>
+                <label for="number">temperatura maxima </label>
+              </div>
+              <div>
+                <input type="number" id="fname" name="temperatura_Max" placeholder="en grados celsius">
+              </div>
+            </div>
+            
+            <div >
+                <div >
+                  <label for="fname">Temperatura Mínima </label>
+                </div>
+                <div >
+                  <input type="number" id="fname" name="temperatura_Min" placeholder="en grados celsius">
+                </div>
+              </div>
+
+            <div >
+                <div>
+                  <label for="fname"> Humedad Relativa Máxima </label>
+                </div>
+                <div>
+                  <input type="number" id="fname" name="HR_Max" placeholder="%">
+                </div>
+              </div> 
+
+              <div>
+                <div>
+                  <label for="number"> Humedad Relativa Mínima  </label>
+                </div>
+                <div>
+                  <input type="number" id="fname" name="HR_Min" placeholder="%">
+                </div>
+              </div>
+              
+              <div>
+                  <div>
+                    <label for="fname"> Velocidad del Viento</label>
+                  </div>
+                  <div>
+                    <input type="number" id="fname" name="velocidadViento" placeholder="m/s">
+                  </div>
+                </div>
+
+  
+
+            <br>
+            <div >
+              <input type="submit" value="Submit">
+            </div>
+            </form>
+            
+        
+          </div>
+        <!-- fin formulario -->
+
+          <script>
+            window.onload = function(){
+            document.getElementById('txtTabla').value = "Tutorial Javascript";
+            }
+          </script>
+        
+        <form name="frmTabla" id="frmTabla">
+          <input name="txtTabla" type="text" id="txtTabla">
+          </form>
+
+
+
+        <!-- mapa openlayer6 -->
+          
+        <div id="mapa" style="display:none;">
+        SKJDLKAJK</div>
+
+
+
+ 
+    
+        <div id="coordenadas"></div>
+      
+    
+        <script src="./mapa/main.js"></script>  
+        
+        
+      
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+  </body>
+</html>

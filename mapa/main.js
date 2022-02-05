@@ -46,7 +46,7 @@ map.on('singleclick', function(evt){
 	overlay.setPosition(coordenada);
 
 	
-	document.getElementById('coordenadas').innerHTML = hdms[1]+","+hdms[0];
+	//document.getElementById('coordenadas').innerHTML = hdms[1]+","+hdms[0];
 	document.getElementById('latitud_popup').value = hdms[0];
 
 					// crea marcador

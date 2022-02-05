@@ -19,7 +19,7 @@
 
       <link rel="stylesheet" href="./css-formulario/formulario.css">
 
-      
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -30,12 +30,16 @@
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             <img src="imagenAgropyron__1_-removebg-preview.png" alt="" width="100%" height="100" >
-            <button value="1" onclick="formulario_ET0(this.value)">ETO</button>
+            
           </a>
         </div>
       </nav>
 
-     
+      <input type="button" value="Evapotranspiración" onclick="formulario_ET0(this.value)">
+      <input type="button" value="humedad del suelo" onclick="formulario_ET0(this.value)">
+      <input type="button" value="grados dias" onclick="formulario_ET0(this.value)">
+      <a href="#formulario_ET0"> <input type="button" value="formulario_ET0" onclick="formulario_ET0(this.value)" ></a>
+
       <div id="map" class="map" style="display: block;"></div>
       <div id="popup" class="ol-popup">
         
@@ -57,7 +61,7 @@
         var i = 0
           function formulario_ET0(valor){
               var divA = document.getElementById('formulario_ET0');
-              if (valor=="1"){
+              if (valor=="formulario_ET0"){
                     divA.style.display="block";
                     i = i + 1;
                   }
@@ -198,28 +202,15 @@
           </div>
         <!-- fin formulario -->
 
-          <script>
-            window.onload = function(){
-            document.getElementById('txtTabla').value = "Tutorial Javascript";
-            }
-          </script>
-        
-        <form name="frmTabla" id="frmTabla">
-          <input name="txtTabla" type="text" id="txtTabla">
-          </form>
+
 
 
 
         <!-- mapa openlayer6 -->
           
-        <div id="mapa" style="display:none;">
-        SKJDLKAJK</div>
-
 
 
  
-    
-        <div id="coordenadas"></div>
       
     
         <script src="./mapa/main.js"></script>  

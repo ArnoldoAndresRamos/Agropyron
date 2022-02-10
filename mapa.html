@@ -6,79 +6,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- mapa openlayer -->
-      <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
+    <!-- Pointer events polyfill for old browsers, see https://caniuse.com/#feat=pointer -->
       
       <script src="https://unpkg.com/elm-pep@1.0.6/src/elm-pep.js"></script>
-      <!-- The lines below are only needed for old environments like Internet Explorer and Android 4.x -->
+    <!-- The lines below are only needed for old environments like Internet Explorer and Android 4.x -->
       <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,TextDecoder"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
       
       <script src="./mapa/v6.12.0-dist/ol.js"></script>
-      <link rel="stylesheet" href="./mapa/v6.12.0-dist/ol.css">
-      <link rel="stylesheet" href="./css-mapa/mapa.css">
+      <link rel="stylesheet" href ="./mapa/v6.12.0-dist/ol.css">
+      <link rel="stylesheet" href ="./css-mapa/mapa.css">
 
-      <link rel="stylesheet" href="./css-formulario/formulario.css">
-
-
-    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href ="./css-formulario/formulario.css">
+      <link rel="stylesheet" href ="./css-formulario/formulario2.css">
+      <link rel="stylesheet" href ="./css-formulario/logo.css">
+      
+    <!-- slider de botones-->
+      <link rel="stylesheet" href ="./css/sliderButton.css">
+   
+      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Hello, world!</title>
   </head>
+
+
+
+
+
+
+
+
+
+
   <body>
-    <nav class="navbar navbar-light bg">
+    <!--
+    <nav class="navbar navbar-light bg" style="box-shadow: 0px 8px 16px 0px rgba(14, 12, 14, 0.2);">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="imagenAgropyron__1_-removebg-preview.png" alt="" width="100%" height="100" >
-            
+            <img class='logoMenu' ;src="planta-en-crecimiento.png" alt="" width="22%" object-fit:cover>
           </a>
         </div>
       </nav>
+    -->
 
-      <input type="button" value="Evapotranspiración" onclick="formulario_ET0(this.value)">
-      <input type="button" value="humedad del suelo" onclick="formulario_ET0(this.value)">
-      <input type="button" value="grados dias" onclick="formulario_ET0(this.value)">
-      <a href="#formulario_ET0"> <input type="button" value="formulario_ET0" onclick="formulario_ET0(this.value)" ></a>
 
-      <div id="map" class="map" style="display: block;"></div>
+
+
+
+
+
+
+  
+<!-- Mapa -->
+      <div id="map" class="map"></div>
+      
       <div id="popup" class="ol-popup">
-        
         <a href="#" id="popup-closer" class="ol-popup-closer"></a>
         <div>
+          <div>
+            <span>fecha</span>
             <input type="date" id="" name="fecha" placeholder="en grados celsius">
+          </div>
+          <div>
+            <span>latitud</span>
             <input type="number" id="latitud_popup" name="latitud" placeholder="latitud">
+          </div>
+
             <input type="number" id="" name="fecha" placeholder="en grados celsius">
             <input type="number" id="" name="fecha" placeholder="en grados celsius">
-            <input type="number" id="" name="fecha" placeholder="en grados celsius">
+            <input type="color" id="colorMarcador">
+            <input type="number" id="valor" name="fecha" placeholder="valor">
+            <input type="button" id="bot" name="fecha" value="Guardar" onclick="j()" placeholder="en grados celsius">
         </div>
         <div id="popup-content"></div>
       </div>
 
 
+      <section class="Agronono" style="position:absolute; margin-top:5%;">
+        <img src="planta-en-crecimiento.png" width="10%" >
+        <h3>Agronono</h3>
+      </section>
 
 
-      <script >
-        var i = 0
-          function formulario_ET0(valor){
-              var divA = document.getElementById('formulario_ET0');
-              if (valor=="formulario_ET0"){
-                    divA.style.display="block";
-                    i = i + 1;
-                  }
-              if(i>1){
-                divA.style.display="none";
-                i=0
-              }
-            console.log(i)   
-            }  
-                                
-      </script>
+
+      <section class="slider">
+        <label>sad</label>
+      </section>
+        <section class="slider">
+          <p style="position: absolute;color: rgb(21, 23, 26);">evapo</p>
+          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <p style="position: absolute;color: rgb(28, 29, 31);">sdfdsf</p>
+          <input type="image" src="cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          <input type="image" src="cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input type="image" src="soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          <input type="image" src="suelo.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input type="image" src="cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          <input type="image" src="cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          
+          <svg    viewBox="0 0 24 24"  value="formulario_ET0" onclick="formulario_ET0(this.value)">
+            <title>velocidad del viento</title>
+            <path d="M6 8.67h5.354c1.457 
+            0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
+            11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
+            18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
+            2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+
+            </path>
+          </svg>
+        </section>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+<!-- Formulario 1 -->
+
+  <script >
+  var i = 1
+  function formulario_ET0(valor){
+    var divA = document.getElementById('formulario_ET0');
+      if (valor=="formulario_ET0"){
+          divA.style.display="block";
+          i = i + 1;
+      }
+      if (valor=="cerrar"){
+          divA.style.display="none";
+          i=0
+      }
+      if(i>1){
+          divA.style.display="none";
+          i=0
+      }
+      console.log(i+valor)   
+  }
+  </script>
       
       
-
-      <!-- Formulario -->
-        <div  class="contenedor" id="formulario_ET0" valuer="1" style=" display: none">
-
+      <div  class="contenedor" id="formulario_ET0" style=" display: none">
+        <button   class="cerrarFormulario" value="cerrar" onclick="formulario_ET0(this.value)"></button>
+        
             <form  action="";>
 
              <div>
@@ -93,7 +170,7 @@
      
   
 
-             <div>
+             <div >
                 <div>
                   <label for="number">latitud</label>
                 </div>
@@ -190,11 +267,8 @@
                   </div>
                 </div>
 
-  
-
-            <br>
             <div >
-              <input type="submit" value="Submit">
+              <button>calcular</button>
             </div>
             </form>
             
@@ -206,26 +280,76 @@
 
 
 
-        <!-- mapa openlayer6 -->
+
+
+
+
+
+
+<!-- Formulario 2 -->
+
+
+<script >
+var i = 0
+function formulario2(valor){
+  var divA = document.getElementById('formulario2');
+    if (valor=="formulario2"){
+        divA.style.display="block";
+        i = i + 1;
+    }
+    if (valor=="cerrar"){
+        divA.style.display="none";
+        i=0
+    }
+    if(i>1){
+        divA.style.display="none";
+        i=0
+    }
+    console.log(i+valor)   
+}
+</script>
+
+
+
+  <div class="formulario2" id="formulario2" style="display: none">
+    <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
+
+    <form>
+      <h2>Register Form</h2>
+      <div class="">
+        <i class=""></i>
+        <input class="" type="text" placeholder="Username">
+      </div>
+    
+      <div class="">
+        <i class=""></i>
+        <input class="" type="text" placeholder="Email">
+      </div>
+      
+      <div>
+        <i class="fa fa-key icon"></i>
+        <input class="" type="password" placeholder="Password" >
+      </div>
+    
+      <button class="btn">Register</button>
+    </form>
+
+  </div>
           
 
 
  
       
     
-        <script src="./mapa/main.js"></script>  
-        
-        
-      
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="./mapa/main.js"></script>  
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!-- Option 2: Separate Popper and Bootstrap JS 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    
+    -->
   </body>
 </html>

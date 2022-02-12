@@ -72,7 +72,7 @@ function tensionEntradaDeAire($S,$C,$OM,$DF){
   return $Ye;
 }
 
-echo tensionEntradaDeAire(0.85 , 0.04 , 2.0 , 1);
+
 
 function B($S , $C , $OM , $DF){
   $a = log( 1500 ) - log( 33 );
@@ -80,6 +80,12 @@ function B($S , $C , $OM , $DF){
   $c = log( humedad_1500kPa( $S , $C , $OM ) );
   return $a/($b-$c);
 }
+function A($S , $C , $OM , $DF){
+  return exp(log(33) + B($S , $C , $OM , $DF) * log( humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF) ));
+}
+echo B(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1)."<br>";
+echo A(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
+
 
 
 

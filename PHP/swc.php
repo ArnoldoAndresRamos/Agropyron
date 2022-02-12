@@ -131,8 +131,8 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 
 
-function SWC($S , $C , $OM , $DF=1 , $RW =0 , $CE=0){
-    $i =$S + $C + $OM + $DF=1 + $RW =0 + $CE=0;
+function soilWater($S , $C , $OM , $DF, $RW, $CE){
+    $i =$S + $C + $OM + $DF + $RW =0 + $CE=0;
    return "hola ".$i;                    
 }  
 //$j = SWC( 0.7 , 0.21 , 2.5 ,1.0 ,0, 2.5);

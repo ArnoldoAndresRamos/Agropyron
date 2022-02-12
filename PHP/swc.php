@@ -24,6 +24,7 @@ function densidadNormal_gcm3($S , $C , $OM){
 
 
 
+
 /* EFECTO DE LA DENSIDAD */
 function densidadAjustada_gcm3($S , $C , $OM , $DF=1){
     return densidadNormal_gcm3($S , $C , $OM)*$DF;
@@ -41,11 +42,13 @@ function humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF){
 
 
 
+
 /* EFECTO DE LA GRAVA */
 function fraccionDeVolumenDeGrava($S,$C,$OM,$DF,$RW){
     $alfa = densidadAjustada_gcm3($S,$C,$OM,$DF) / 2.65;
     return (1-$RW) / (1-$RW * (1-1.5*$alfa));
 }
+
 
 
 
@@ -56,7 +59,6 @@ function Lambda($S , $C , $OM , $DF){
     $c = log( 1500 ) - log( 33 );
     return ($a-$b)/$c;
 }
-
 function conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW){
   return 1930 * humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF)**(3-Lambda($S , $C , $OM ,$DF)) * fraccionDeVolumenDeGrava($S,$C,$OM,$DF,$RW);
 }
@@ -98,29 +100,70 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
   $res =  array();
   
   while($humedad<1){
-   
     if($humedad!=0){
       $t = $a*($humedad**(-$b)) + ($uSat/ $humedad) * 32 *$EC;
     }
-    
     if(1499.9 < $t And $t <1500){
       array_push($res ,(round($humedad,3)) );
     }
-    
     $humedad+=0.000001;
   }
-  
   return min($res);
 }
 
-echo humedad_1500kPaAjustada_Ec(0.6, 0.30, 2, 1 , 10);
 
 
-
-
-
-function swc(){
- return "hola";
+/* AGUA DISPONIBLE */
+function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
+  /*
+  S   = Arena ,   % fraccion de 0-1
+  C   = Arcilla , % fraccion de 0-1
+  OM  = MateriaOrganica , % 
+  DF  = Compactacion , valor entre 0.9-1.3, normal = 1.0  
+  RW  = Grava     % fraccion de 0-1
+  CE  = conductividad electrica dS/m
+  */
+  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF)
+  $b = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE)
+  return $a-$b
 }
+
+/* funcion principal */
+function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
+  /*
+  S   = Arena ,   % fraccion entre 0 y 1
+  C   = Arcilla , % fraccion entre 0 y 1
+  OM  = MateriaOrganica , % 
+  DF  = Compactacion , valor entre 0.9-1.3, normal = 1.0  
+  RW  = Grava     % fraccion de 0-1
+  CE  = conductividad electrica dS/m
+  */
+
+  $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);  # %V 0-1 = m3 Agua / m3 Suelo 
+  $h_1500          = humedad_1500kPa($S,$C,$OM);                                  # %V 0-1 = m3 Agua / m3 Suelo  (no ajustada a la CE) 
+  $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF);   # %V 0-1 = m3 Agua / m3 Suelo
+  $aguaDisp        = aguaDisponible( $S , $C , $OM , $DF);                        # cm/cm   (no ajustada a la CE ni a la grava)
+  $Ksat            = conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW); # mm/hr
+  $densidad        = densidadAjustada_gcm3($S,$C,$OM,$DF);                       # 
+
+
+  if($CE!=0){
+    $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE)
+  }
+
+  return [$hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad];
+  /*
+  return   
+      "Capacidad de Campo": hSat_33kPa_DF , # %V 0-1 = m3 Agua / m3 Suelo 
+      "Punto Marchitez Permanente":h_1500 , # %V 0-1 = m3 Agua / m3 Suelo 
+      "humedad Saturada":hSat ,             # %V 0-1 = m3 Agua / m3 Suelo 
+      "agua disponible":aguaD ,             # cm/cm 
+      "Conduc hidraulica Sat":Ksat ,
+      "densidad": densidad 
+  */
+  }  
+echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 ,$DF= 1.0 ,$RW=0, $CE=2.5);
+echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
+
 
 ?>

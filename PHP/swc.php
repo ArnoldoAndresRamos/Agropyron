@@ -102,11 +102,11 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
     if($humedad!=0){
       $t = $a*($humedad**(-$b)) + ($uSat/ $humedad) * 32 *$EC;
     }
-    /*
+    
     if(1499.9 < $t And $t <1500){
       array_push($res ,(round($humedad,3)) );
     }
-    */
+    
     $humedad+=0.000001;
   }
   

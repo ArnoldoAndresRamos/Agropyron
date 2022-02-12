@@ -140,7 +140,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   */
 
 
-  /*
+  
 
 function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
  
@@ -159,7 +159,7 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
 }  
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 ,$DF= 1.0 ,$RW=0, $CE=2.5);
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
-*/
+
 
 
 ?>

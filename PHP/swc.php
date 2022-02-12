@@ -29,7 +29,11 @@ function densidadNormal_gcm3($S , $C , $OM){
 function densidadAjustada_gcm3($S , $C , $OM , $DF=1){
     return densidadNormal_gcm3($S , $C , $OM)*$DF;
 }
-echo densidadAjustada_gcm3(0.8,0.04,2.08,$DF=1.2);
+
+function humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF){
+    return 1 - densidadAjustada_gcm3($S , $C , $OM ,$DF )/ 2.65;
+}
+echo humedadSaturada_0kPaAjustadaDensidad(0.8,0.04,2.08,$DF=1.2);
 
 function swc(){
  return "hola";

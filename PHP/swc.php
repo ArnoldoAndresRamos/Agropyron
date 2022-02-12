@@ -60,7 +60,7 @@ function Lambda($S , $C , $OM , $DF){
 function conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW){
   return 1930 * humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF)**(3-Lambda($S , $C , $OM ,$DF)) * fraccionDeVolumenDeGrava($S,$C,$OM,$DF,$RW);
 }
-echo conductividadHidraulicaSaturada(0.846272727272727 , 0.0430151515151515 , 2.08 , DF=1 , RW=0.0)
+echo conductividadHidraulicaSaturada(0.846272727272727 , 0.0430151515151515 , 2.08 , DF=1 , RW=0.0);
 
 
 

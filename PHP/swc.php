@@ -128,9 +128,9 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   return $a-$b;
 }
 
-/* funcion principal */
-function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
-  /*
+
+
+ /* funcion principal 
   S   = Arena ,   % fraccion entre 0 y 1
   C   = Arcilla , % fraccion entre 0 y 1
   OM  = MateriaOrganica , % 
@@ -138,6 +138,12 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
   RW  = Grava     % fraccion de 0-1
   CE  = conductividad electrica dS/m
   */
+
+
+  /*
+
+function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
+ 
 
   $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);  # %V 0-1 = m3 Agua / m3 Suelo 
   $h_1500          = humedad_1500kPa($S,$C,$OM);                                  # %V 0-1 = m3 Agua / m3 Suelo  (no ajustada a la CE) 
@@ -149,20 +155,11 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
   if($CE!=0){
     $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   }
-
   return ($hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad);
-  /*
-  return   
-      "Capacidad de Campo": hSat_33kPa_DF , # %V 0-1 = m3 Agua / m3 Suelo 
-      "Punto Marchitez Permanente":h_1500 , # %V 0-1 = m3 Agua / m3 Suelo 
-      "humedad Saturada":hSat ,             # %V 0-1 = m3 Agua / m3 Suelo   
-      "agua disponible":aguaD ,             # cm/cm 
-      "Conduc hidraulica Sat":Ksat ,
-      "densidad": densidad 
-  */
-  }  
+}  
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 ,$DF= 1.0 ,$RW=0, $CE=2.5);
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
+*/
 
 
 ?>

@@ -83,7 +83,7 @@ function B($S , $C , $OM , $DF){
 function A($S , $C , $OM , $DF){
   return exp(log(33) + B($S , $C , $OM , $DF) * log( humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF) ));
 }
-echo B(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1)."<br>";
+echo B(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
 echo A(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
 
 

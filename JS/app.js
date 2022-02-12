@@ -1,4 +1,4 @@
-var formulario = document.getElementById('formulario');
+var formulario = document.getElementById('swc');
 var respuesta  = document.getElementById('respuesta');
 
 formulario.addEventListener('submit', function(e){

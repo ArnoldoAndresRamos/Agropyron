@@ -99,25 +99,21 @@
 
         
           <label class="cesped1" style="margin-left:20px ; position: absolute;"> label 2 </label>
-          <input type="image" src="img/cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          <input type="image" src="img/perfil_suelo.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
           
 
       
-          <label class="cesped2" style="margin-left:100px ; position: absolute;">label 3</label>
-          <input type="image" src="img/cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-       
+          <label class="cesped2" style="margin-left:110px ; position: absolute;">ETo</label>
+          <input type="image" src="img/cesped.png"  width="10%" value="formulario_ET0" onclick="formulario2(this.value)">
           
-          
-          
-          <input type="image" src="img/soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          <label class="cesped2" style="margin-left:190px ; position: absolute;">ETc</label>
+          <input type="image" src="img/soil1.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
           
           <input type="image" src="img/suelo.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
           
-          <label class="cesped" style="margin-left:200px ; position: absolute;">asd ds</label>
+          <label class="cesped" style="margin-left:300px ; position: absolute;">asd ds</label>
           <input class="a" type="image" src="img/calendario.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <!--<input type="image" src="img/planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <input type="image" src="img/cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
-          -->       
+          
           
         </section>
 
@@ -161,106 +157,6 @@
         
             <form  action="";>
 
-             <div>
-              <div>
-                <label for="number">fecha</label>
-              </div>
-              <div>
-                <input type="date" id="" name="fecha" placeholder="en grados celsius">
-              </div>
-            </div>
-
-     
-  
-
-             <div >
-                <div>
-                  <label for="number">latitud</label>
-                </div>
-                <div>
-                  <input type="number" id="latitud" value="" name="latitud" placeholder="grados decimales">
-                </div>
-              </div>
-
-            <div>
-              <div>
-                <label for="number">altitud</label>
-              </div>
-              <div>
-                <input type="date" id="" name="fecha" placeholder="m.s.n.m">
-              </div>
-            </div>
-
-
-            <!-- radicion solar oculto -->
-            <script >
-              var i = 0
-                function radiacionSolar_si(valor){
-                    var divA = document.getElementById('F');
-                    if (valor=="Radiacion Solar"){
-                          divA.style.display="block";
-                          i = i + 1;
-                        }
-                    if(i>1){
-                      divA.style.display="none";
-                      i=0
-                    }
-                  console.log(i)   
-                  }  
-                                      
-            </script>
-
-            <div>
-                <div>
-                    <input  class= "radio A" type="button" name="datos de Rs" id="A" value="Radiacion Solar" onclick="radiacionSolar_si(this.value)">
-                </div>
-            </div>
-
-            <div id="F" style="display: none;">
-                <div>
-                  <input type="number" id="" name="radiacionSolar" placeholder="kj/m2/dia">
-                </div>
-              </div>
-            <!-- fin radicion solar oculto -->
-
-
-            
-            <div>
-              <div>
-                <label for="number">temperatura maxima </label>
-              </div>
-              <div>
-                <input type="number" id="fname" name="temperatura_Max" placeholder="en grados celsius">
-              </div>
-            </div>
-            
-            <div >
-                <div >
-                  <label for="fname">Temperatura Mínima </label>
-                </div>
-                <div >
-                  <input type="number" id="fname" name="temperatura_Min" placeholder="en grados celsius">
-                </div>
-              </div>
-
-            <div >
-                <div>
-                  <label for="fname"> Humedad Relativa Máxima </label>
-                </div>
-                <div>
-                  <input type="number" id="fname" name="HR_Max" placeholder="%">
-                </div>
-              </div> 
-
-              <div>
-                <div>
-                  <label for="number"> Humedad Relativa Mínima  </label>
-                </div>
-                <div>
-                  <input type="number" id="fname" name="HR_Min" placeholder="%">
-                </div>
-              </div>
-              
               <div class="row">
                 <div class="column">
                 <svg    viewBox="0 0 24 24"  style="width: 3%;">
@@ -353,33 +249,51 @@ function formulario2(valor){
 }
 </script>
 
-
-
   <div class="formulario2" id="formulario2" style="display: none">
     <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
 
-    <form>
-      <h2>Register Form</h2>
+    <form id="swc">
+      <h2>Soil Water Characteristics</h2>
       <div class="">
         <i class=""></i>
-        <input class="" type="text" placeholder="Username">
+        <input class="" type="number" placeholder="Arena %">
       </div>
     
       <div class="">
         <i class=""></i>
-        <input class="" type="text" placeholder="Email">
+        <input class="" type="number" placeholder="Arcilla %">
       </div>
       
       <div>
         <i class="fa fa-key icon"></i>
-        <input class="" type="password" placeholder="Password" >
+        <input class="" type="number" placeholder="M. Organica %"  name="">
       </div>
     
       <button class="btn">Register</button>
     </form>
+    <div id="respuesta">
+
+    </div>
 
   </div>
           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  

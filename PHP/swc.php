@@ -129,19 +129,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 }
 
 
-
- /* funcion principal 
-  S   = Arena ,   % fraccion entre 0 y 1
-  C   = Arcilla , % fraccion entre 0 y 1
-  OM  = MateriaOrganica , % 
-  DF  = Compactacion , valor entre 0.9-1.3, normal = 1.0  
-  RW  = Grava     % fraccion de 0-1
-  CE  = conductividad electrica dS/m
-  */
-
-
-  
-
+/*
 function SWC($S , $C , $OM , $DF=1 , $RW =0 , $CE=0){
  
   $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF ); 
@@ -156,6 +144,6 @@ function SWC($S , $C , $OM , $DF=1 , $RW =0 , $CE=0){
 echo SWC( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
 //echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
 
-
+*/
 
 ?>

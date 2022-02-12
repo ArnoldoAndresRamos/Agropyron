@@ -26,6 +26,10 @@ function densidadNormal_gcm3($S , $C , $OM){
     return (1 - humedadSaturada_0kPa($S , $C , $OM) ) *2.65;
 }
 
+function densidadAjustada_gcm3($S , $C , $OM , $DF=1){
+    return densidadNormal_gcm3($S , $C , $OM)*$DF;
+}
+echo densidadAjustada_gcm3(0.8,0.04,$DF=1.2);
 
 function swc(){
  return "hola";

@@ -40,12 +40,25 @@ function humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF){
 }
 
 
+
 /* EFECTO DE LA GRAVA */
 function fraccionDeVolumenDeGrava($S,$C,$OM,$DF,$RW){
     $alfa = densidadAjustada_gcm3($S,$C,$OM,$DF) / 2.65;
     return (1-$RW) / (1-$RW * (1-1.5*$alfa));
 }
-echo fraccionDeVolumenDeGrava(0.8 , 0.04 , 2.08 , $DF=1.2 , $RW=0.1);
+
+
+
+/* HUMEDAD -CONDUCTIVIDAD */
+function Lambda($S , $C , $OM , $DF){
+    $a = log( humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF) );
+    $b = log( humedad_1500kPa($S , $C , $OM ));
+    $c = log( 1500 ) - log( 33 );
+    return ($a-$b)/$c;
+}
+echo Lambda(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1)
+
+
 function swc(){
  return "hola";
 }

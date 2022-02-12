@@ -153,7 +153,7 @@ function SWC($S , $C , $OM , $DF=1 , $RW =0 , $CE=0){
   return "hola";                    
 }  
 //$j = SWC( 0.7 , 0.21 , 2.5 ,1.0 ,0, 2.5);
-echo SWC( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0)
+echo SWC( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
 //echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
 
 

@@ -145,12 +145,12 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
  
 
-  $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);  # %V 0-1 = m3 Agua / m3 Suelo 
-  $h_1500          = humedad_1500kPa($S,$C,$OM);                                  # %V 0-1 = m3 Agua / m3 Suelo  (no ajustada a la CE) 
-  $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF);   # %V 0-1 = m3 Agua / m3 Suelo
-  $aguaDisp        = aguaDisponible( $S , $C , $OM , $DF);                        # cm/cm   (no ajustada a la CE ni a la grava)
-  $Ksat            = conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW); # mm/hr
-  $densidad        = densidadAjustada_gcm3($S,$C,$OM,$DF);                       # 
+  $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF );  // %V 0-1 = m3 Agua / m3 Suelo 
+  $h_1500          = humedad_1500kPa( $S , $C , $OM );                             // %V 0-1 = m3 Agua / m3 Suelo  (no ajustada a la CE) 
+  $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF);    // %V 0-1 = m3 Agua / m3 Suelo
+  $aguaDisp        = aguaDisponible( $S , $C , $OM , $DF);                         // cm/cm   (no ajustada a la CE ni a la grava)
+  $Ksat            = conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW);   // mm/hr
+  $densidad        = densidadAjustada_gcm3($S,$C,$OM,$DF);                      
 
   if($CE!=0){
     $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);

@@ -56,7 +56,7 @@ function Lambda($S , $C , $OM , $DF){
     $c = log( 1500 ) - log( 33 );
     return ($a-$b)/$c;
 }
-echo Lambda(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1)
+echo Lambda(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
 
 
 function swc(){

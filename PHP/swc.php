@@ -135,7 +135,7 @@ function soilWater($S , $C , $OM , $DF, $RW, $CE){
     $i =$S + $C + $OM + $DF + $RW =0 + $CE=0;
     $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
     $h_1500          = humedad_1500kPa($S,$C,$OM);
-   return "hola ".$hSat_33kPa_DF.",".$h_1500;                    
+   return {"a:".$hSat_33kPa_DF.",b:".$h_1500};                    
 }  
 
 echo soilWater( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0);

@@ -133,11 +133,12 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 function soilWater($S , $C , $OM , $DF, $RW, $CE){
     $i =$S + $C + $OM + $DF + $RW =0 + $CE=0;
-   return "hola ".$i;                    
+    $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+   return "hola ".$hSat_33kPa_DF;                    
 }  
-//$j = SWC( 0.7 , 0.21 , 2.5 ,1.0 ,0, 2.5);
+
 echo soilWater( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
-//echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
+
 
 
 

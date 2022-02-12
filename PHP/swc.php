@@ -151,7 +151,7 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
     $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE)
   }
 
-  return [$hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad];
+  return $hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad;
   /*
   return   
       "Capacidad de Campo": hSat_33kPa_DF , # %V 0-1 = m3 Agua / m3 Suelo 

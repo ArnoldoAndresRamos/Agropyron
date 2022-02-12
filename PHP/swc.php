@@ -127,6 +127,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   $b = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   return $a-$b;
 }
+echo aguaDisponibleAjustada_CE(0.6 , 0.2 , 2.5 ,1 ,2);
 
 
 /*

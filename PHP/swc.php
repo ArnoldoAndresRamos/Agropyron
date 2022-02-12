@@ -22,6 +22,10 @@ function humedadSaturada_0kPa($S , $C , $OM){
   return humedadSaturada_33kPa($S , $C , $OM) + humedad_33kPa($S , $C , $OM) -  0.097* $S + 0.043;
 }
 
+function densidadNormal_gcm3($S , $C , $OM){
+    return (1 - humedadSaturada_0kPa($S , $C , $OM) ) *2.65;
+}
+
 
 function swc(){
  return "hola";

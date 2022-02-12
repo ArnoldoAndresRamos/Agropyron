@@ -13,13 +13,15 @@
       <script src="https://cdn.polyfill.io/v3/polyfill.min.js?features=fetch,requestAnimationFrame,Element.prototype.classList,TextDecoder"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.18.3/minified.js"></script>
       
+
+
       <script src="./mapa/v6.12.0-dist/ol.js"></script>
       <link rel="stylesheet" href ="./mapa/v6.12.0-dist/ol.css">
-      <link rel="stylesheet" href ="./css-mapa/mapa.css">
+      <link rel="stylesheet" href ="./css/css-mapa/mapa.css">
 
-      <link rel="stylesheet" href ="./css-formulario/formulario.css">
-      <link rel="stylesheet" href ="./css-formulario/formulario2.css">
-      <link rel="stylesheet" href ="./css-formulario/logo.css">
+      <link rel="stylesheet" href ="./css/css-formulario/formulario.css">
+      <link rel="stylesheet" href ="./css/css-formulario/formulario2.css">
+      <link rel="stylesheet" href ="./css/css-formulario/logo.css">
       
     <!-- slider de botones-->
       <link rel="stylesheet" href ="./css/sliderButton.css">
@@ -84,38 +86,39 @@
 
 
       <section class="Agronono" style="position:absolute; margin-top:5%;">
-        <img src="planta-en-crecimiento.png" width="10%" >
+        <img src="img/planta-en-crecimiento.png" width="10%" >
         <h3>Agronono</h3>
       </section>
 
 
-
-      <section class="slider">
-        <label>sad</label>
-      </section>
         <section class="slider">
-          <p style="position: absolute;color: rgb(21, 23, 26);">evapo</p>
-          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <p style="position: absolute;color: rgb(28, 29, 31);">sdfdsf</p>
-          <input type="image" src="cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
-          <input type="image" src="cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <input type="image" src="soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
-          <input type="image" src="suelo.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          <input type="image" src="cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
-          <input type="image" src="cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          
-          <svg    viewBox="0 0 24 24"  value="formulario_ET0" onclick="formulario_ET0(this.value)">
-            <title>velocidad del viento</title>
-            <path d="M6 8.67h5.354c1.457 
-            0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
-            11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
-            18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
-            2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+        <!--
+          <label>label 1</label>
+         <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          -->
 
-            </path>
-          </svg>
+        
+          <label class="cesped1" style="margin-left:20px ; position: absolute;"> label 2 </label>
+          <input type="image" src="img/cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          
+
+      
+          <label class="cesped2" style="margin-left:100px ; position: absolute;">label 3</label>
+          <input type="image" src="img/cesped2.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+       
+          
+          
+          
+          <input type="image" src="img/soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          
+          <input type="image" src="img/suelo.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          
+          <label class="cesped" style="margin-left:200px ; position: absolute;">asd ds</label>
+          <input class="a" type="image" src="img/calendario.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <!--<input type="image" src="img/planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input type="image" src="img/cesped.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          -->       
+          
         </section>
 
        
@@ -258,18 +261,59 @@
                 </div>
               </div>
               
-              <div>
-                  <div>
+              <div class="row">
+                <div class="column">
+                <svg    viewBox="0 0 24 24"  style="width: 3%;">
+                  <title>velocidad del viento</title>
+                  <path d="M6 8.67h5.354c1.457 
+                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
+                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
+                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
+                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+      
+                  </path>
+                </svg>
+                </div>
+                <div class="column">
                     <label for="fname"> Velocidad del Viento</label>
-                  </div>
-                  <div>
+                </div>
+                 <div class="column">
                     <input type="number" id="fname" name="velocidadViento" placeholder="m/s">
-                  </div>
+                 </div>
                 </div>
 
-            <div >
+            <div>
               <button>calcular</button>
             </div>
+            </form>
+
+            <form>
+              <h2>Entrada de datos ET referencia</h2>
+              <div class="">
+                <i class=""><svg    viewBox="0 0 24 24"  style="width: 5%;background:red" >
+                  <title>velocidad del viento</title>
+                  <path d="M6 8.67h5.354c1.457 
+                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
+                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
+                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
+                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+      
+                  </path>
+                </svg></i>
+                <input class="" type="text" placeholder="Username">
+              </div>
+            
+              <div class="">
+                <i class=""></i>
+                <input class="" type="text" placeholder="Email">
+              </div>
+              
+              <div>
+                <i class="fa fa-key icon"></i>
+                <input class="" type="password" placeholder="Password" >
+              </div>
+            
+              <button class="btn">Register</button>
             </form>
             
         

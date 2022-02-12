@@ -74,6 +74,13 @@ function tensionEntradaDeAire($S,$C,$OM,$DF){
 
 echo tensionEntradaDeAire(0.85 , 0.04 , 2.0 , 1);
 
+function B($S , $C , $OM , $DF){
+  $a = log( 1500 ) - log( 33 );
+  $b = log( humedad_33kPaAjustadaDensidad( $S , $C , $OM , $DF ) );
+  $c = log( humedad_1500kPa( $S , $C , $OM ) );
+  return $a/($b-$c);
+}
+
 
 
 function swc(){

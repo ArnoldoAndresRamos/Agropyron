@@ -83,11 +83,32 @@ function B($S , $C , $OM , $DF){
 function A($S , $C , $OM , $DF){
   return exp(log(33) + B($S , $C , $OM , $DF) * log( humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF) ));
 }
-echo B(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
-echo A(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF =1);
 
 
 
+/* SALINIDAD */
+function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
+  $a = A($S,$C,$OM,$DF);
+  $b = B($S,$C,$OM,$DF);
+
+  $uSat = humedadSaturada_0kPaAjustadaDensidad( $S , $C , $OM , $DF);
+  $u_33 = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF);
+  $humedad = 0;// humedad_1500kPa(S,C,OM)
+  $t = 0;
+  $res=[];
+  while($humedad<1){
+    if($humedad!=0){
+      $t = $a*($humedad**(-$b)) + ($uSat/ $humedad) * 32 *$EC;
+    }
+    if(1499.9 < $t And $t <1500){
+      array_push($res ,(round($humedad,3)));
+    }
+    $humedad+=0.000001;
+  }
+  return min($res) //#round(sum(res)/len(res),3) 
+}
+
+echo humedad_1500kPaAjustada_Ec(0.6, 0.30, 2, 1 , 10);
 
 function swc(){
  return "hola";

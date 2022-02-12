@@ -1,8 +1,8 @@
 <?php
 include('swc.php');
 
-$arena      = $_POST['arena']/100;
-$arcilla    = $_POST['arcilla']/100;
+$arena      = $_POST['arena'];
+$arcilla    = $_POST['arcilla'];
 $m_organica = $_POST['m_organica'];
 $j=swc();
 

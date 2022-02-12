@@ -40,8 +40,11 @@ function humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF){
 function humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF){
     return humedad_33kPa($S , $C , $OM) -0.2 * ( humedadSaturada_0kPa($S , $C , $OM) - humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF) );
 }
-echo humedad_33kPaAjustadaDensidad(0.8,0.04,2.08,$DF=1.2);
 
+function humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF){
+    return humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF) - humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+}
+echo humedadSaturada_33kPaAjustadaDensidad(0.8,0.04,2.08,$DF=1.2);
 function swc(){
  return "hola";
 }

@@ -29,7 +29,7 @@ function densidadNormal_gcm3($S , $C , $OM){
 function densidadAjustada_gcm3($S , $C , $OM , $DF=1){
     return densidadNormal_gcm3($S , $C , $OM)*$DF;
 }
-echo densidadAjustada_gcm3(0.8,0.04,$DF=1.2);
+echo densidadAjustada_gcm3(0.8,0.04,2.08,$DF=1.2);
 
 function swc(){
  return "hola";

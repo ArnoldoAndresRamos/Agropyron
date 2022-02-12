@@ -1,3 +1,3 @@
 <?php
-echo "hola";
+echo son_encode( "hola".2312);
 ?>

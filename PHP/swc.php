@@ -21,7 +21,7 @@ function humedadSaturada_33kPa($S , $C , $OM){
 function humedadSaturada_0kPa($S , $C , $OM){
   return humedadSaturada_33kPa($S , $C , $OM) + humedad_33kPa($S , $C , $OM) -  0.097* $S + 0.043;
 }
-echo humedadSaturada_0kPa(0.8 , 0.04 , 2);
+
 
 function swc(){
  return "hola";

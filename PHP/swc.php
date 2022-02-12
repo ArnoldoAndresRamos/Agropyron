@@ -148,7 +148,7 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
 
 
   if($CE!=0){
-    $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE)
+    $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   }
 
   return $hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad;

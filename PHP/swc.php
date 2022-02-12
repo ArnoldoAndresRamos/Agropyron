@@ -110,7 +110,7 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
     $humedad+=0.000001;
   }
   
-  return $res;//min($res);
+  return min($res);
 }
 
 echo humedad_1500kPaAjustada_Ec(0.6, 0.30, 2, 1 , 10);

@@ -155,13 +155,13 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
   if($CE!=0){
     $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   }
-  return ([$hSat_33kPa_DF, $h_1500]);//, $hSat , $aguaDisp , $Ksat , $densidad;
+  return ([$hSat_33kPa_DF, $h_1500, $hSat , $aguaDisp , $Ksat , $densidad]);
 }  
 
-/*
+
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 ,$DF= 1.0 ,$RW=0, $CE=2.5);
 echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
-*/
+
 
 
 ?>

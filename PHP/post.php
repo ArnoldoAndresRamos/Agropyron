@@ -1,4 +1,5 @@
 <?php
+include('swc.php');
 
 $arena      = $_POST['arena'];
 $arcilla    = $_POST['arcilla'];

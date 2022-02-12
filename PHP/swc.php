@@ -86,7 +86,7 @@ function A($S , $C , $OM , $DF){
 
 
 
-/* SALINIDAD */
+/* SALINIDAD 
 function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
   $a = A($S,$C,$OM,$DF);
   $b = B($S,$C,$OM,$DF);
@@ -109,6 +109,10 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
 }
 
 echo humedad_1500kPaAjustada_Ec(0.6, 0.30, 2, 1 , 10);
+
+
+*/
+
 
 function swc(){
  return "hola";

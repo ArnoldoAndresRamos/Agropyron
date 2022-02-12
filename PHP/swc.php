@@ -61,15 +61,16 @@ function conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW){
   return 1930 * humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF)**(3-Lambda($S , $C , $OM ,$DF)) * fraccionDeVolumenDeGrava($S,$C,$OM,$DF,$RW);
 }
 
-echo conductividadHidraulicaSaturada(0.846272727272727 , 0.0430151515151515 , 2.08 , $DF=1.2 , $RW=0.1);
+
 
 
 /* HUMEDAD - TENSION */
-function tensionEntradaDeAire($S,$C,$OM,$DF):
+function tensionEntradaDeAire($S,$C,$OM,$DF){
   $uS_33 = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
   $Yet   = -21.67*$S - 27.932*$C - 81.975* $uS_33 + 71.121*($S * $uS_33) + 8.294*($C * $uS_33) + 14.05*($S * $C) + 27.161;
   $Ye    = $Yet + (0.02*$Yet**2 - 0.113* $Yet - 0.70);
-  return Ye
+  return $Ye;
+}
 
 echo tensionEntradaDeAire(0.85 , 0.04 , 2.0 , 1);
 

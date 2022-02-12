@@ -144,21 +144,16 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 function SWC($S , $C , $OM , $DF=1 , $RW =0 , $CE=0){
  
-
   $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF ); 
   $h_1500          = humedad_1500kPa( $S , $C , $OM );                           
   $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF);    
   $aguaDisp        = aguaDisponible( $S , $C , $OM , $DF);                        
   $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW); 
-  $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF);                      
-
-  if($CE!=0){
-    $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
-  }
-  return ([$hSat_33kPa_DF]);//, $h_1500, $hSat , $aguaDisp , $Ksat , $densidad]);
+  $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF);  
+  return "hola";                    
 }  
-$j=SWC( 0.7 , 0.21 , 2.5 ,1.0 ,0, 2.5);
-//echo SWC( $S  , $C , $OM , $DF=1, $RW =0, $CE=0)
+//$j = SWC( 0.7 , 0.21 , 2.5 ,1.0 ,0, 2.5);
+echo SWC( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0)
 //echo SWC( $S=0.7 , $C=0.21 , $OM=2.5 );
 
 

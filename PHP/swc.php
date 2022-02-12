@@ -123,9 +123,9 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   RW  = Grava     % fraccion de 0-1
   CE  = conductividad electrica dS/m
   */
-  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF)
-  $b = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE)
-  return $a-$b
+  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+  $b = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
+  return $a-$b;
 }
 
 /* funcion principal */
@@ -146,17 +146,16 @@ function SWC($S  , $C , $OM , $DF=1, $RW =0, $CE=0){
   $Ksat            = conductividadHidraulicaSaturada($S , $C , $OM , $DF , $RW); # mm/hr
   $densidad        = densidadAjustada_gcm3($S,$C,$OM,$DF);                       # 
 
-
   if($CE!=0){
     $h_1500        = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   }
 
-  return $hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad;
+  return ($hSat_33kPa_DF , $h_1500 , $hSat , $aguaDisp , $Ksat , $densidad);
   /*
   return   
       "Capacidad de Campo": hSat_33kPa_DF , # %V 0-1 = m3 Agua / m3 Suelo 
       "Punto Marchitez Permanente":h_1500 , # %V 0-1 = m3 Agua / m3 Suelo 
-      "humedad Saturada":hSat ,             # %V 0-1 = m3 Agua / m3 Suelo 
+      "humedad Saturada":hSat ,             # %V 0-1 = m3 Agua / m3 Suelo   
       "agua disponible":aguaD ,             # cm/cm 
       "Conduc hidraulica Sat":Ksat ,
       "densidad": densidad 

@@ -95,7 +95,7 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
   $u_33 = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF);
   $humedad = 0;
   $t = 0;
-  $res=array();
+  $res =  array();
   /*
   while($humedad<1){
     
@@ -109,7 +109,7 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
     $humedad+=0.000001;
   }
   */
-  return min($res);
+  return $res//min($res);
 }
 
 echo humedad_1500kPaAjustada_Ec(0.6, 0.30, 2, 1 , 10);

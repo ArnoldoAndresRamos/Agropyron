@@ -11,16 +11,17 @@ function humedad_33kPa($S , $C , $OM){
   $u33  = $u33t + (1.283*($u33t)**2 - 0.374*($u33t) - 0.015);
   return $u33; 
 }
-/*
+
 function humedadSaturada_33kPa($S , $C , $OM){
   $uSat_33t = 0.278 * $S + 0.034*$C + 0.022 * $OM - 0.018*($S * $OM) - 0.027*($C * $OM) - 0.584*($S * $C) + 0.078;
   $uSat_33  = $uSat_33t + (0.636 * $uSat_33t - 0.107);
   return $uSat_33;
 }
+echo humedadSaturada_33kPa(0.8, 0.04 , 2.4);
 function humedadSaturada_0kPa($S , $C , $OM){
   return humedadSaturada_33kPa($S , $C , $OM) + humedad_33kPa($S , $C , $OM) -  0.097* $S + 0.043;
 }
-*/
+
 function swc(){
  return "hola";
 }

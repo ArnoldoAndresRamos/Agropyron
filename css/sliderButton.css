@@ -92,4 +92,7 @@ input[type=image]:hover{
   .slider label{
      margin-top: 19%;
   }
+  .perfil_suelo{
+    width: 224px;
+  }
  }

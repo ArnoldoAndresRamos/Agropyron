@@ -157,7 +157,7 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
 
 }  
 
-echo soil_water_characteristics( $S=$_POST['arena'] , $C=$_POST['arcilla'] , $OM=$_POST['m_organica'] , $DF=1, $RW =0, $CE=0);
+//echo soil_water_characteristics( $S=$_POST['arena'] , $C=$_POST['arcilla'] , $OM=$_POST['m_organica'] , $DF=1, $RW =0, $CE=0);
 
 
 ?>

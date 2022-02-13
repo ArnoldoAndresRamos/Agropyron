@@ -138,7 +138,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 
 
-function soil_water_characteristics($S , $C , $OM , $DF, $RW, $CE){
+function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
     
     //$hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
     $h_33kPa_DF      = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);

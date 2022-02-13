@@ -7,15 +7,13 @@ function sendRequest1(){
  	b.open('POST',url,false);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
-        if(this.readyState==4 && this.status == 200){
+      
                 var i = b.responseText;
                 var datos=JSON.parse(i);
                 console.log(datos)
        	        document.getElementById('respuesta3').innerHTML = i;
-	    }
+	    
         b.send("s="+i+"&m="+e);
-    }
-    console.log(datos)
     };
 
 let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'

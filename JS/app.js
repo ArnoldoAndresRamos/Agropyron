@@ -6,7 +6,7 @@ formulario.addEventListener('submit', function(e){
     var datos = new FormData(formulario);
     console.log(datos)
 
-    fetch('PHP/swc.php', {
+    fetch('PHP/post.php', {
         method:'POST',
         body:datos
         })  

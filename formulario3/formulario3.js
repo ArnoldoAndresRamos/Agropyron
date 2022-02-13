@@ -7,10 +7,11 @@ function sendRequest1(){
  	b.open('GET',url,true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
-        var i = b.responseText;
-        var datos=JSON.parse(i);
-       	document.getElementById('respuesta3').innerHTML = datos;
-	}
+          if(this.readyState==4 && this.status == 200){
+                var i = b.responseText;
+                var datos=JSON.parse(i);
+       	        document.getElementById('respuesta3').innerHTML = i;
+	        }
 
  	b.send("s="+i+"&m="+e);
 };

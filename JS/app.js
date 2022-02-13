@@ -33,5 +33,6 @@ formulario.addEventListener('submit', function(e){
     fetch('PHP/post.php')
     .then(function(res){
         console.log(res);
+        return res.json();
     })
 }

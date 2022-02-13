@@ -23,5 +23,5 @@ if ($CE!=0){
 */
 $suelo=soil_water_characteristics($arena,$arcilla,$m_organica);
 //echo json_encode('a:'.$CC.',b:'.$PMP.',c:'.$SAT.',d:'.$aguaDisp.',e:'.$Ksat.',f:'.$densidad );
-echo json_encode('a:'.$suelo[0].',b:'.$suelo[1].',c:'.$suelo[2].',d:'.$suelo[3].',e:'.$suelo[4].',f:'.$suelo[5]);
+echo json_encode('a:'.$suelo["cc"].',b:'.$suelo["pmp"].',c:'.$suelo["sat"].',d:'.$suelo["aguaDisp"].',e:'.$suelo["ksat"].',f:'.$suelo["densidad"]);
 ?>

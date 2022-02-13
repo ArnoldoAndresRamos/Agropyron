@@ -153,11 +153,6 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
     }
     
     $arr = array('cc' => $h_33kPa_DF , 'pmp' => $h_1500 , 'sat' => $hSat , 'aguaDisp' => $aguaDisponible, 'ksat' => $Ksat,'densidad'=> $densidad );
-    return $arr;   
-
-}  
-
-//echo soil_water_characteristics( $S=$_POST['arena'] , $C=$_POST['arcilla'] , $OM=$_POST['m_organica'] , $DF=1, $RW =0, $CE=0);
-
-
+    return $arr;
+}
 ?>

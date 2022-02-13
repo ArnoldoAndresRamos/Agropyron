@@ -116,7 +116,7 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
 /* AGUA DISPONIBLE */
 
 function aguaDisponible($S , $C , $OM , $DF){
-  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+  $a = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
   $b = humedad_1500kPa($S,$C,$OM);
   return $a-$b; 
 }
@@ -130,7 +130,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   RW  = Grava     % fraccion de 0-1
   CE  = conductividad electrica dS/m
   */
-  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+  $a = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
   $b = humedad_1500kPaAjustada_Ec($S,$C,$OM,$DF,$CE);
   return $a-$b;
 }

@@ -4,7 +4,7 @@ var respuesta  = document.getElementById('respuesta');
 formulario.addEventListener('submit', function(e){
     e.preventDefault();
     var datos = new FormData(formulario);
-    console.log(datos)
+    console.log(JSON.stringify(datos))
 
     fetch('PHP/post.php', {
         method:'POST',

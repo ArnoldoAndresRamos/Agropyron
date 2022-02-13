@@ -17,14 +17,21 @@ formulario.addEventListener('submit', function(e){
             respuesta.innerHTML= `
             <div class="alert alert-danger" role="alert">
                 A simple danger alert—check it out!
-            </div
+            </div>
             `
         }else{
             respuesta.innerHTML= `
             <div class="alert alert-primary" role="alert">
                 ${data}
-            </div
+            </div>
             `
         }
       })
  })
+
+ function SWC(){
+    fetch('PHP/post.php')
+    .then(function(res){
+        console.log(res);
+    })
+}

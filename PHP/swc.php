@@ -132,22 +132,20 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 
 function soilWater($S , $C , $OM , $DF, $RW, $CE){
-    $i =$S + $C + $OM + $DF + $RW =0 + $CE=0;
+    
     $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
     $h_1500          = humedad_1500kPa( $S,$C,$OM );
     $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF );
-    
     $aguaDisp        = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
-    /*
     $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW );
     $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF );  
-    */
-    $arr = array('a' => $hSat_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisp, 'e' => 5);
+    
+    $arr = array('a' => $hSat_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisp, 'e' => $Ksat,'f'=> $densidad );
     return json_encode($arr);   
 
 }  
 
-echo soilWater( $S=0.7  , $C=0.21 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
+echo soilWater( $S=0.2  , $C=0.2 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
 
 
 ?>

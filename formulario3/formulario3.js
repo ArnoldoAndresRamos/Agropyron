@@ -11,7 +11,7 @@ function sendRequest1(){
                 var i = b.responseText;
                 var datos=JSON.parse(i);
                 console.log(datos)
-       	        document.getElementById('respuesta3').innerHTML = i;
+       	        document.getElementById('respuesta3').innerHTML = b.responseText;
 	    
         b.send("s="+i+"&m="+e);
     };

@@ -136,12 +136,13 @@ function soilWater($S , $C , $OM , $DF, $RW, $CE){
     $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
     $h_1500          = humedad_1500kPa( $S,$C,$OM );
     $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF );
-    /*
+    
     $aguaDisp        = aguaDisponible( $S , $C , $OM , $DF );
+    /*
     $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW );
     $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF );  
     */
-    $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+    $arr = array('a' => $hSat_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => 4, 'e' => 5);
     return json_encode($arr);   
 
 }  

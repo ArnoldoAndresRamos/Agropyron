@@ -19,6 +19,7 @@ $densidad = densidadAjustada_gcm3( $S , $C , $OM , $DF );
 if ($CE!=0){
     $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
 }
-$arr = array('a' => $CC , 'b' => $PMP , 'c' => $SAT , 'd' => $aguaDisp, 'e' => $Ksat,'f'=> $densidad );
-echo json_encode($arr);
+//$arr = array('a' => $CC , 'b' => $PMP , 'c' => $SAT , 'd' => $aguaDisp, 'e' => $Ksat,'f'=> $densidad );
+//echo json_encode($arr);
+echo json_encode('a:'.$CC.',b:'.$PMP.',c:'.$SAT.',d:'.$aguaDisp.',e:'.$Ksat.',f:'.$densidad );
 ?>

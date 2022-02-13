@@ -1,4 +1,4 @@
-function sendRequest(){
+function sendRequest1(){
 	let i =document.getElementById('input').value;
 	let e = 10;
 	
@@ -12,6 +12,13 @@ function sendRequest(){
 	}
  	b.send("s="+i+"&m="+e);
 };
+let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
+function sendRequest(){
+    fetch('url')
+    .then(function(res){
+        console.log(res);
+    })
+}
 
 
 /*

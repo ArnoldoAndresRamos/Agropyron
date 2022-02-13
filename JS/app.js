@@ -32,9 +32,9 @@ formulario.addEventListener('submit', function(e){
  */
 
  function SWC(){
-    fetch('PHP/post.php')
+    fetch('./PHP/post.php')
     .then(function(res){
         console.log(res);
-        return res.json();
+        return res.jsonParse();
     })
 }

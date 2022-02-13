@@ -114,6 +114,13 @@ function humedad_1500kPaAjustada_Ec($S , $C , $OM , $DF , $EC){
 
 
 /* AGUA DISPONIBLE */
+
+function aguaDisponible($S , $C , $OM , $DF){
+  $a = humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+  $b = humedad_1500kPa($S,$C,$OM);
+  return $a-$b; 
+}
+
 function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   /*
   S   = Arena ,   % fraccion de 0-1
@@ -134,13 +141,18 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 function soilWater($S , $C , $OM , $DF, $RW, $CE){
     
     $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
+    $h_33kPa_DF   = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
     $h_1500          = humedad_1500kPa( $S,$C,$OM );
     $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF );
-    $aguaDisp        = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
+    $aguaDisponible  = aguaDisponible($S , $C , $OM , $DF );
     $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW );
     $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF );  
+
+    if ($CE!=){
+        $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
+    }
     
-    $arr = array('a' => $hSat_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisp, 'e' => $Ksat,'f'=> $densidad );
+    $arr = array('a' => $h_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisponible, 'e' => $Ksat,'f'=> $densidad );
     return json_encode($arr);   
 
 }  

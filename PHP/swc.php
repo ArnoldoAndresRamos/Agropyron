@@ -152,8 +152,8 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
         $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
     }
     
-    $arr = array('a' => $h_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisponible, 'e' => $Ksat,'f'=> $densidad );
-    return json_encode($arr);   
+    //$arr = array('a' => $h_33kPa_DF , 'b' => $h_1500 , 'c' => $hSat , 'd' => $aguaDisponible, 'e' => $Ksat,'f'=> $densidad );
+    return "CC:".$h_33kPa_DF ,"PMP:".$h_1500.",Sat:".$hSat.",aguaDisp:".$aguaDisponible.",conduct .h sat:".$Ksat.",densidad :".$densidad ;   
 
 }  
 

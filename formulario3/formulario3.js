@@ -18,7 +18,7 @@ function sendRequest1(){
 
  	b.send("s="+i+"&m="+e);
 };
-
+var datos = datosi;
 let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
 function sendRequest2(){
     fetch('url')

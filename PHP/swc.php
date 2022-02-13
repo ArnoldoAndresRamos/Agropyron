@@ -140,15 +140,15 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 function soilWater($S , $C , $OM , $DF, $RW, $CE){
     
-    $hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
-    $h_33kPa_DF   = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
-    $h_1500          = humedad_1500kPa( $S,$C,$OM );
+    //$hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
+    $h_33kPa_DF      = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
+    $h_1500          = humedad_1500kPa( $S , $C , $OM );
     $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF );
     $aguaDisponible  = aguaDisponible($S , $C , $OM , $DF );
     $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW );
     $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF );  
 
-    if ($CE!=){
+    if ($CE!=0){
         $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
     }
     

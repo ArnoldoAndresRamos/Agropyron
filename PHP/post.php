@@ -5,7 +5,7 @@ $arena      = $_POST['arena']/100;
 $arcilla    = $_POST['arcilla']/100;
 $m_organica = $_POST['m_organica'];
 
-return json_encode( soil_water_characteristics( $arena  , $arcilla , $m_organica));
+echo json_encode( soil_water_characteristics( $arena  , $arcilla , $m_organica));
 
 /*
 $humedad_1500kPa        = humedad_1500kPa($arena , $arcilla , $m_organica);

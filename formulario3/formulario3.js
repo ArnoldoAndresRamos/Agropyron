@@ -3,7 +3,7 @@ function sendRequest(){
 	let e = 10;
 	
  	let b = new XMLHttpRequest()
- 	b.open('POST','formulario3.php',true);
+ 	b.open('POST','https:/aara.duckdns.org/agronono/formulario3.php',true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
   		console.log(b.responseText,);

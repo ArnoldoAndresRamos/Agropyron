@@ -10,9 +10,9 @@ function sendRequest1(){
         var i = b.responseText;
         var datosi=JSON.parse(i);
         console.log(datosi);
-        let datos =JSON.parse(b.responseText);
-        console.log("datos = "+datos);
-  		console.log(b.responseText);
+        //let datos =JSON.parse(b.responseText);
+        //console.log("datos = "+datos);
+  		//console.log(b.responseText);
  		document.getElementById('respuesta3').innerHTML = b.responseText;
 	}
 

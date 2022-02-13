@@ -4,14 +4,18 @@ function sendRequest1(){
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
- 	b.open('POST',url,true);
+ 	b.open('POST',url,false);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
+        var i = b.responseText;
+        var datosi=JSON.parse(i);
+        console.log(datosi);
         let datos =JSON.parse(b.responseText);
         console.log("datos = "+datos);
-  		console.log(b.responseText,);
+  		console.log(b.responseText);
  		document.getElementById('respuesta3').innerHTML = b.responseText;
 	}
+
  	b.send("s="+i+"&m="+e);
 };
 

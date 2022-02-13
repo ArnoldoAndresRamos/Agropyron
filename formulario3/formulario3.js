@@ -14,6 +14,9 @@ function sendRequest1(){
         //console.log("datos = "+datos);
   		//console.log(b.responseText);
  		document.getElementById('respuesta3').innerHTML = b.responseText;
+         for(let item of datosi){
+            console.log("jxjkh");
+         }
 	}
 
  	b.send("s="+i+"&m="+e);

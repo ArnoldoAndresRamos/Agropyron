@@ -8,7 +8,7 @@ function sendRequest1(){
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
         var i = b.responseText;
-        var datosi=JSON.parse(i);
+        var datosi=JSON.parse("'"+i+"'");
         console.log(datosi);
         //let datos =JSON.parse(b.responseText);
         //console.log("datos = "+datos);

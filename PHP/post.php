@@ -5,7 +5,8 @@ $arena      = $_POST['arena']/100;
 $arcilla    = $_POST['arcilla']/100;
 $m_organica = $_POST['m_organica'];
 
-echo soil_water_characteristics( $arena  , $arcilla , $m_organica);
+$res = soil_water_characteristics( $arena  , $arcilla , $m_organica);
+echo $res;
 
 /*
 $humedad_1500kPa        = humedad_1500kPa($arena , $arcilla , $m_organica);

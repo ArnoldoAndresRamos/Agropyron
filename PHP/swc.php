@@ -157,7 +157,7 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
 
 }  
 
-//echo soil_water_characteristics( $S=0.2  , $C=0.2 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
+echo soil_water_characteristics( $S=0.2  , $C=0.2 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
 
 
 ?>

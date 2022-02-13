@@ -117,7 +117,7 @@
           <input class="a" type="image" src="img/perfil_suelo.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
           
           <label class="cesped" style="margin-left:300px ; position: absolute;">asd ds</label>
-          <input class="a" type="image" src="img/calendario.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          <input class="a" type="image" src="img/calendario.png"  width="10%" value="formulario3" onclick="formulario3(this.value)">
           
           
         </section>
@@ -282,6 +282,55 @@ function formulario2(valor){
 
   </div>
           
+  
+
+
+
+
+
+
+
+  <!-- Formulario 3 -->
+
+
+<script >
+  var i = 0
+  function formulario3(valor){
+    var divA = document.getElementById('formulario3');
+      if (valor=="formulario3"){
+          divA.style.display="block";
+          i = i + 1;
+      }
+      if (valor=="cerrar"){
+          divA.style.display="none";
+          i=0
+      }
+      if(i>1){
+          divA.style.display="none";
+          i=0
+      }
+      console.log(i+valor)   
+  }
+  </script>
+  
+    <div class="formulario2" id="formulario3" style="display: none">
+      <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
+  
+      <form id="form3">
+        <h1>conexcion ajax y php</h1>
+        <input type="text" id="input" value="">
+        <button onclick="sendRequest()">enviar</button>
+      </form>
+      <div id="respuesta3">
+        respuesta3
+      </div>
+  
+    </div>
+
+  
+
+
+  <script src="./formulario3/formulario3.js"></script>
 
 
 

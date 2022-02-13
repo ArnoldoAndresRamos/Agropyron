@@ -4,7 +4,7 @@ function sendRequest1(){
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
- 	b.open('POST',url,true);
+ 	b.open('POST',url,false);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
         if(this.readyState==4 && this.status == 200){

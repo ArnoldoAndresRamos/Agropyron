@@ -4,7 +4,7 @@ function sendRequest1(){
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
- 	b.open('GET',url,true);
+ 	b.open('post',url,true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
           if(this.readyState==4 && this.status == 200){
@@ -14,8 +14,9 @@ function sendRequest1(){
 	        }
 
  	b.send("s="+i+"&m="+e);
+    console.log(datos)
 };
-var datos = datosi;
+
 let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
 function sendRequest2(){
     fetch('url')

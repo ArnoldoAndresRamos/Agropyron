@@ -23,5 +23,7 @@ if ($CE!=0){
 */
 $suelo=soil_water_characteristics($arena,$arcilla,$m_organica);
 //echo json_encode('a:'.$CC.',b:'.$PMP.',c:'.$SAT.',d:'.$aguaDisp.',e:'.$Ksat.',f:'.$densidad );
-echo json_encode('{capacided de campo:'.$suelo["cc"].',b:'.$suelo["pmp"].',c:'.$suelo["sat"].',d:'.$suelo["aguaDisp"].',e:'.$suelo["ksat"].',f:'.$suelo["densidad"]."}");
+$age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
+echo json_encode($age);
+//echo json_encode('{"capacided de campo:"'.$suelo["cc"].',punto de marchitez permanente:'.$suelo["pmp"].',c:'.$suelo["sat"].',d:'.$suelo["aguaDisp"].',e:'.$suelo["ksat"].',f:'.$suelo["densidad"]."}");
 ?>

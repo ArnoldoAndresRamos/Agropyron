@@ -9,11 +9,7 @@ function sendRequest1(){
   	b.onreadystatechange = function(){
         var i = b.responseText;
         var datos=JSON.parse(i);
-        console.log(datos);
-        //let datos =JSON.parse(b.responseText);
-        //console.log("datos = "+datos);
-  		//console.log(b.responseText);
- 		document.getElementById('respuesta3').innerHTML = datos;
+       	document.getElementById('respuesta3').innerHTML = datos;
 	}
 
  	b.send("s="+i+"&m="+e);

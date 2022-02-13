@@ -138,7 +138,7 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 
 
-function soilWater($S , $C , $OM , $DF, $RW, $CE){
+function soil_water_characteristics($S , $C , $OM , $DF, $RW, $CE){
     
     //$hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
     $h_33kPa_DF      = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
@@ -157,7 +157,7 @@ function soilWater($S , $C , $OM , $DF, $RW, $CE){
 
 }  
 
-echo soilWater( $S=0.2  , $C=0.2 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
+//echo soil_water_characteristics( $S=0.2  , $C=0.2 , $OM=2.5 , $DF=1, $RW =0, $CE=0);
 
 
 ?>

@@ -16,7 +16,7 @@ function sendRequest1(){
             console.log(`${property} ${datos[property]}`);
             res.innerHTML+=`
             <tr>
-                <td>${property}: ${datos[property]}</td>
+                <td>a</td>
             </tr>
             `
           }

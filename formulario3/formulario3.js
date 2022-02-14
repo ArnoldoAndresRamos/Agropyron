@@ -29,12 +29,7 @@ function sendRequest2(){
     })
     .then(function(data){
         console.log(data);
-        let html='';
-        data.forEach(function(datosSuelo){
-            html+=`
-            <li>${datosSuelo.cc} ${datosSuelo.pmp}</li>
-            `;
-        });
+        data['cc'];
         document.getElementById('respuesta3').innerHTML=html;
     })
 }

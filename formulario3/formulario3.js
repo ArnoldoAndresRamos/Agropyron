@@ -29,7 +29,7 @@ function sendRequest2(){
     })
     .then(function(data){
         console.log(data);
-    }
+    })
 }
 
 

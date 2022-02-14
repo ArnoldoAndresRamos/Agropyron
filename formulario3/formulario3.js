@@ -30,7 +30,7 @@ function sendRequest2(){
     .then(function(data){
         console.log(data);
         
-        document.getElementById('respuesta3').innerHTML=data['cc'];
+        document.getElementById('respuesta3').innerHTML=data;
     })
 }
 

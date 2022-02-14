@@ -12,17 +12,14 @@ function sendRequest1(){
         var res = document.getElementById('respuesta3');
         res.innerHTML='';
         for (const property in datos) {
-
-            console.log(`${property} ${datos[property]}`);
+            //console.log(`${property} ${datos[property]}`);
             res.innerHTML+=`
             <tr>
-                <td>a</td>
+                <td>${datos[property]}</td>
             </tr>
             `
           }
- 		
-	}
-    
+	}    
  	b.send("s="+i+"&m="+e);
 };
 

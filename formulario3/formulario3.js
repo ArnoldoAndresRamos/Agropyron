@@ -29,6 +29,13 @@ function sendRequest2(){
     })
     .then(function(data){
         console.log(JSON.parse(data));
+        let html='';
+        data.forEach(function(datosSuelo){
+            html+=`
+            <li>${datosSuelo.cc} ${datosSuelo.pmp}</li>
+            `;
+        });
+        document.getElementById('respuesta3').innerHTML=html;
     })
 }
 

@@ -8,20 +8,18 @@ function sendRequest1(){
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
         var i = b.responseText;
-        var datosi=JSON.parse("'"+i+"'");
-        console.log(datosi);
-        //let datos =JSON.parse(b.responseText);
-        //console.log("datos = "+datos);
-  		//console.log(b.responseText);
+        var datos=JSON.parse(b.responseText);
+        console.log(datos);
+        
  		document.getElementById('respuesta3').innerHTML = b.responseText;
          for(var i =0;datosi.length - 1;i++){
-            console.log(datosi[i])
+            console.log(datos[i])
          }
 	}
-
+    console.log(datos);
  	b.send("s="+i+"&m="+e);
 };
-var datos = datosi;
+
 let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
 function sendRequest2(){
     fetch('url')

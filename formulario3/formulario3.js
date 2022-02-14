@@ -29,8 +29,8 @@ function sendRequest2(){
     })
     .then(function(data){
         console.log(data);
-        data['cc'];
-        document.getElementById('respuesta3').innerHTML=html;
+        
+        document.getElementById('respuesta3').innerHTML=data['cc'];
     })
 }
 

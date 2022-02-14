@@ -7,7 +7,8 @@ function sendRequest1(){
  	b.open('POST',url,true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
-        var datos=JSON.parse(b.responseText);
+        //var datos=JSON.parse(b.responseText);
+        var datos=JSON.stringify(b.responseText);
         console.log(datos);
         for (const property in datos) {
             console.log(`${property}: ${datos[property]}`);
@@ -27,7 +28,9 @@ function sendRequest2(){
     })
     .then(function(data){
         console.log(data);
-        
+        for (const property in datos) {
+            console.log(`${property}: ${datos[property]}`);
+          }
         document.getElementById('respuesta3').innerHTML=data[''];
     })
 }

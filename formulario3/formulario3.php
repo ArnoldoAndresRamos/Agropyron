@@ -5,8 +5,9 @@ $s = $_POST['s'];
 $m = $_POST['m'];
 //echo "string"+$s+$m+34;
 $datos = json_encode($n);
-//echo json_encode($n);
+echo $datos;
 
+// para modificar de beben tener los permisos
 $myfile = fopen("output.json", "w"); 
 $bytes = fwrite($myfile, $datos); 
 fclose($myfile); 

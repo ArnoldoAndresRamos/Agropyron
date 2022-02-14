@@ -12,7 +12,7 @@ formulario.addEventListener('submit', function(e){
         body:datos
         })  
     
-    .then(res=>res.json())
+    .then(res=>res.text())
     .then(data=>{
         respuesta.innerHTML= `
         <div class="alert alert-primary" role="alert">
@@ -20,8 +20,8 @@ formulario.addEventListener('submit', function(e){
         </div>
         `
         }
-      }),
- }),
+      })
+ })
  
 /*
 function SWC(){

@@ -13,7 +13,7 @@ function sendRequest1(){
         res.innerHTML='';
         for (const property in datos) {
 
-            console.log(`${property}: ${datos[property]}`);
+            console.log(`${property} ${datos[property]}`);
             res.innerHTML+=`
             <tr>
                 <td>${property}: ${datos[property]}</td>

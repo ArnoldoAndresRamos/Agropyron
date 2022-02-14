@@ -16,14 +16,15 @@ function sendRequest1(){
             console.log(datos[i])
          }
 	}
-    console.log(datos);
+    
  	b.send("s="+i+"&m="+e);
 };
 
-let url='formulario3.php'
+
 function sendRequest2(){
-    fetch('url')
+    fetch('/formulario3.php')
     .then(function(res){
+        return JSON.parse(res);
         console.log(res);
     })
 }

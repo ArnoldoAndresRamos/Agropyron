@@ -25,10 +25,10 @@ function sendRequest2(){
     fetch('formulario3/formulario3.php')
     .then(function(res){
         console.log(res);
-        return res.text();
+        return res.json();
     })
     .then(function(data){
-        console.log(data);
+        console.log(JSON.parse(data));
     })
 }
 

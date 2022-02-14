@@ -1,4 +1,4 @@
-/*
+
 var formulario = document.getElementById('swc');
 var respuesta  = document.getElementById('respuesta');
 
@@ -23,7 +23,7 @@ formulario.addEventListener('submit', function(e){
       }),
  }),
  
-*/
+/*
 function SWC(){
     fetch('PHP/post.php')
     .then(function(res){
@@ -37,3 +37,4 @@ function SWC(){
         document.getElementById('respuesta').innerHTML=data['cc'];
     })
 }
+*/

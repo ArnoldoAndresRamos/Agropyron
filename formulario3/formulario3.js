@@ -25,7 +25,7 @@ function sendRequest2(){
     fetch('formulario3/formulario3.php')
     .then(function(res){
         console.log(res);
-        return res.json();
+        return res.text();
     })
     .then(function(data){
         console.log(JSON.parse(data));

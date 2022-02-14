@@ -22,7 +22,7 @@ function sendRequest1(){
 
 
 function sendRequest2(){
-    fetch('/formulario3.php')
+    fetch('formulario3/formulario3.php')
     .then(function(res){
         return JSON.parse(res);
         console.log(res);

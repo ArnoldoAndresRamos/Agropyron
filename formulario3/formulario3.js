@@ -27,7 +27,7 @@ function sendRequest2(){
         console.log(res);
         return res.text();
     })
-    .then(function(data)){
+    .then(function(data){
         console.log(data);
     }
 }

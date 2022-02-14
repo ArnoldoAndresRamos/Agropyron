@@ -22,13 +22,13 @@ function sendRequest1(){
 
 
 function sendRequest2(){
-    fetch('formulario3/formulario3.php')
+    fetch('formulario3/output.json')
     .then(function(res){
         console.log(res);
-        return res.text();
+        return res.json();
     })
     .then(function(data){
-        console.log(JSON.parse(data));
+        console.log(data);
         let html='';
         data.forEach(function(datosSuelo){
             html+=`

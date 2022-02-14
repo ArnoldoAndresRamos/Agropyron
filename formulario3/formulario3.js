@@ -9,6 +9,9 @@ function sendRequest1(){
   	b.onreadystatechange = function(){
         var datos=JSON.parse(b.responseText);
         console.log(datos);
+        for (const property in datos) {
+            console.log(`${property}: ${datos[property]}`);
+          }
  		document.getElementById('respuesta3').innerHTML = b.responseText;
 	}
     

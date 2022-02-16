@@ -21,7 +21,7 @@ formulario.addEventListener('submit', function(e){
         }else{
             respuesta.innerHTML= `
             <div class="alert alert-primary" role="alert">
-                ${data[0]}
+                ${data['capacidad de campo']}
             </div
             `
         }

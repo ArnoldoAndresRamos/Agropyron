@@ -31,7 +31,7 @@ formulario.addEventListener('submit', function(e){
  })
 
  */
- formulario.addEventListener('submit', function(e){
+ function swc{
 	let i =document.getElementById('input').value;
     let arena = document.getElementsByName('arena').value;
     let arcilla = document.getElementsByName('arcilla').value;

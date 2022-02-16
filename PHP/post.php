@@ -5,7 +5,11 @@ $arena      = $_POST['arena']/100;
 $arcilla    = $_POST['arcilla']/100;
 $m_organica = $_POST['m_organica'];
 
-echo json_encode("arena:".$arena.","."arcilla".$arcilla);
+
+$j=soil_water_characteristics($arena,$arcilla,$m_organica);
+echo json_encode($j);
+//echo json_encode("arena:".$arena.","."arcilla".$arcilla);
+
 /*
 $suelo=soil_water_characteristics($arena,$arcilla,$m_organica);
 

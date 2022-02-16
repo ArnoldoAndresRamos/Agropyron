@@ -21,7 +21,7 @@ formulario.addEventListener('submit', function(e){
         }else{
             respuesta.innerHTML= `
             <div class="alert alert-primary" role="alert">
-                ${data}
+                ${data[0]}
             </div
             `
         }

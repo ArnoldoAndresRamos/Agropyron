@@ -5,12 +5,12 @@ function send_formulario4(){
     let url='https://aara.duckdns.org/agronono/formulario4/formulario4.php'
     formulario4.open("POST",url);
 
-    formulario4.send("dato="+dato);
     
+
     formulario4.onreadystatechange = function(){
         var data = formulario4.responseText;
         document.getElementById('respuesta4').innerHTML = data;
     }
     
-
+    formulario4.send("dato="+dato);
 }

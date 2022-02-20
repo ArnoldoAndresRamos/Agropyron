@@ -5,7 +5,7 @@ include('../PHP/swc.php');
 //$m_organica = $_POST['m_organica'];
 $n = soil_water_characteristics(0.8,0.04,2.08);
 //$m = soil_water_characteristics($arena,$arcilla,$m_organica);
-$s = $_POST['arcilla'];
+$s = $_POST['s'];
 $m = $_POST['m'];
 //echo "string"+$s+$m+34;
 $datos = json_encode($n);

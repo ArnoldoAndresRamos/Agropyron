@@ -6,7 +6,7 @@ function sendRequest1(){
 	
     let i =document.getElementById('input').value;
 	let e = 10;
-    console.log(arena,arcilla,m_organica)
+    
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
@@ -27,6 +27,7 @@ function sendRequest1(){
             `
           }
 	}    
+    console.log(arena,arcilla,m_organica);
  	b.send("s="+i+"&m="+e);
     //b.send("arena="+arena);
     //console.log(b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica))

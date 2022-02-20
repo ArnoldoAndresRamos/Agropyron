@@ -28,7 +28,7 @@ function sendRequest1(){
           }
 	}    
     console.log(are,arc,m_o);
- 	b.send("s="+i+"&m="+e);
+ 	b.send("s="+i+"&m="+e+"&are1="+are);
     //b.send("arena="+arena);
     //console.log(b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica))
 };

@@ -1,6 +1,6 @@
 <?php
 include('../PHP/swc.php');
-$arena      = $_POST['are']/100;
+$arena      = $_POST['are1']/100;
 //$arcilla    = $_POST['arcilla']/100;
 //$m_organica = $_POST['m_organica'];
 $n = soil_water_characteristics(0.8,0.04,2.08);
@@ -8,7 +8,7 @@ $n = soil_water_characteristics(0.8,0.04,2.08);
 $s = $_POST['s'];
 $m = $_POST['m'];
 //echo "string"+$s+$m+34;
-$datos = json_encode($s);
+$datos = json_encode($arena);
 echo $datos;
 
 // para modificar de beben tener los permisos

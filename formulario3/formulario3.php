@@ -9,7 +9,7 @@ $s = $_POST['s'];
 $m = $_POST['m'];
 //echo "string"+$s+$m+34;
 $datos = json_encode($n);
-echo $datos;
+echo $s+",  "+$m;//$datos;
 
 // para modificar de beben tener los permisos
 $myfile = fopen("output.json", "w"); 

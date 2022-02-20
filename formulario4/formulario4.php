@@ -1,6 +1,6 @@
 <?php
 include('../PHP/swc.php');
-$dato = $_POST['dato'];
+$dato = $_GET['dato'];
 echo "formulario 4 ".$dato;
 
 ?>

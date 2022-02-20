@@ -1,7 +1,7 @@
 function sendRequest1(){
-    let arena = document.getElementsByName('arena').value;
-    let arcilla = document.getElementsByName('arcilla').value;
-    let m_organica = document.getElementsByName('m_organica').value;
+    let arena = document.getElementsById('arena').value;
+    let arcilla = document.getElementsById('arcilla').value;
+    let m_organica = document.getElementsById('m_organica').value;
 	
     //let i =document.getElementById('input').value;
 	//let e = 10;

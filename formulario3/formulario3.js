@@ -1,8 +1,8 @@
 function sendRequest1(){
     
-    let arena = document.getElementById('arena').value;
-    let arcilla = document.getElementById('arcilla').value;
-    let m_organica = document.getElementById('m_organica').value;
+    let are = document.getElementById('are').value;
+    let arc = document.getElementById('arc').value;
+    let m_o = document.getElementById('m_o').value;
 	
     let i =document.getElementById('input').value;
 	let e = 10;
@@ -27,7 +27,7 @@ function sendRequest1(){
             `
           }
 	}    
-    console.log(arena,arcilla,m_organica);
+    console.log(are,arc,m_o);
  	b.send("s="+i+"&m="+e);
     //b.send("arena="+arena);
     //console.log(b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica))

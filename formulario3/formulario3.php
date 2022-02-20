@@ -8,9 +8,9 @@ $n = soil_water_characteristics(0.8,0.04,2.08);
 $s = $_POST['s'];
 $m = $_POST['m'];
 //echo "string"+$s+$m+34;
-//$datos = json_encode($arena);
-//echo $datos;
-echo $s;
+$datos = json_encode($arena);
+echo $datos;
+
 // para modificar de beben tener los permisos
 $myfile = fopen("output.json", "w"); 
 $bytes = fwrite($myfile, $datos); 

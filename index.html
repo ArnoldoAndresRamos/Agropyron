@@ -119,6 +119,7 @@
           <label class="cesped" style="margin-left:300px ; position: absolute;">asd ds</label>
           <input class="a" type="image" src="img/calendario.png"  width="10%" value="formulario3" onclick="formulario3(this.value)">
           
+          <input class="a" type="image" src="img/humedad.png"  width="10%" value="formulario4" onclick="formulario4(this.value)">
           
         </section>
 
@@ -340,13 +341,64 @@ function formulario2(valor){
   
     </div>
 
-  
-
-
   <script src="./formulario3/formulario3.js"></script>
 
 
 
+
+
+
+
+
+
+   <!-- Formulario 4 -->
+
+
+<script >
+  var i = 0
+  function formulario4(valor){
+    var divA = document.getElementById('formulario4');
+      if (valor=="formulario4"){
+          divA.style.display="block";
+          i = i + 1;
+      }
+      if (valor=="cerrar"){
+          divA.style.display="none";
+          i=0
+      }
+      if(i>1){
+          divA.style.display="none";
+          i=0
+      }
+      console.log(i+valor)   
+  }
+  </script>
+  
+    <div class="formulario2" id="formulario4" style="display: none">
+      <button class="cerrarFormulario2" value="cerrar" onclick="formulario4(this.value)"></button>
+  
+        <h1>conexcion ajax y php</h1>
+        <input type="text" id="dato" value="">
+     
+        <button onclick="send_formulario4()">enviar dato</button>
+      <div id="respuesta4_">
+        respuesta3
+        <table>
+          <thead>
+          <tr>
+            <th>propiedad</th>
+            <th>valor</th>
+          </tr>
+        </thead>
+        <tbody id="respuesta4">
+
+        </tbody>
+        </table>
+      </div>
+  
+    </div>
+
+  <script src="./formulario4/formulario4.js"></script>
 
 
 

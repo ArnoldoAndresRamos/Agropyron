@@ -1,9 +1,9 @@
  function swc(){
-	let i =document.getElementById('input').value;
+	
     let arena = document.getElementsByName('arena').value;
     let arcilla = document.getElementsByName('arcilla').value;
     let m_organica = document.getElementsByName('m_organica').value;
-	let e = 10;
+
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/PHP/post.php'

@@ -1,6 +1,10 @@
 function sendRequest1(){
-	let i =document.getElementById('input').value;
-	let e = 10;
+    let arena = document.getElementsByName('arena').value;
+    let arcilla = document.getElementsByName('arcilla').value;
+    let m_organica = document.getElementsByName('m_organica').value;
+	
+    //let i =document.getElementById('input').value;
+	//let e = 10;
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
@@ -21,7 +25,8 @@ function sendRequest1(){
             `
           }
 	}    
- 	b.send("s="+i+"&m="+e);
+ 	//b.send("s="+i+"&m="+e);
+    b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica);
 };
 
 

@@ -5,12 +5,14 @@
     width: 10%;
     resize: vertical;
     transition: padding 1s;
+    padding: 1%;
 }
 .Agronono:hover{
     padding : 10px;
+    
 }
 .Agronono h3{
-    
+        
 }
 .Agronono img{
     background-color: rgba(240, 248, 255, 0);

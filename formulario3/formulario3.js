@@ -28,7 +28,8 @@ function sendRequest1(){
           }
 	}    
  	//b.send("s="+i+"&m="+e);
-    b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica);
+    b.send("arena="+arena);
+    //console.log(b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica))
 };
 
 

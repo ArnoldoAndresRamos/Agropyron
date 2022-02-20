@@ -1,10 +1,12 @@
 function sendRequest1(){
+    
     let arena = document.getElementById('arena').value;
     let arcilla = document.getElementById('arcilla').value;
     let m_organica = document.getElementById('m_organica').value;
 	
     //let i =document.getElementById('input').value;
 	//let e = 10;
+    console.log(arena,arcilla,m_organica)
 	
  	let b = new XMLHttpRequest()
     let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'

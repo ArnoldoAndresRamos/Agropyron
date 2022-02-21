@@ -53,75 +53,11 @@
     -->
 
 
-    <div style="width: 100%;height: 100%;background-color: aqua;">
-      SLKDFJLSJFKDFSF
-    </div>
-
 
   
-
-
-
-
-
-      <section class="Agronono" style="position:absolute; margin-top:5%;">
-        <img src="img/planta-en-crecimiento.png" width="10%" >
-        <h3>Agronono</h3>
-      </section>
-
-
-
-
-
-
-
-        <section class="slider">
-        <!--
-          <label>label 1</label>
-         <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
-          -->
-    
-          <label class="cesped2" style="margin-left:110px ; position: absolute;">ETo</label>
-          <input type="image" src="img/cesped.png"  width="10%" value="mapaDisplay" onclick="mapaDisplay(this.value)">
-          
-          
-          <label class="cesped2" style="margin-left:190px ; position: absolute;">ETc</label>
-          <input type="image" src="img/soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
-          
-
-          <label class="cesped" style="margin-left:300px ; position: absolute;">asd ds</label>
-          <input class="a" type="image" src="img/suelo.png"  width="10%" value="formulario3" onclick="formulario3(this.value)">
-          
-          
-          <input class="a" type="image" src="img/humedad.png"  width="10%" value="formulario4" onclick="formulario4(this.value)">
-          
-        </section>
-
-       
-
-
-
 <!-- Mapa -->
-<script >
-  var i = 0
-  function mapaDisplay(valor){
-    var divA = document.getElementById('mapaDisplay');
-      if (valor=="mapaDisplay"){
-          divA.style.display="block";
-          i = i + 1;
-      }
-      if (valor=="cerrar"){
-          divA.style.display="none";
-          i=0
-      }
-      if(i>1){
-          divA.style.display="none";
-          i=0
-      }
-      console.log(i+valor)   
-  }
-  </script>
-      <div id="map" class="map" style="display: block;"></div>
+
+      <div id="map" class="map"></div>
       
       <div id="popup" class="ol-popup">
         <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -146,6 +82,48 @@
 
       <script src="./mapa/main.js"></script> <!-- SCRIPT MAPA-->
       
+
+
+
+
+      <section class="Agronono" style="position:absolute; margin-top:5%;">
+        <img src="img/planta-en-crecimiento.png" width="10%" >
+        <h3>Agronono</h3>
+      </section>
+
+
+
+
+
+
+
+        <section class="slider">
+        <!--
+          <label>label 1</label>
+         <input type="image" src="planta-en-crecimiento.png"  width="10%" value="formulario_ET0" onclick="formulario_ET0(this.value)">
+          -->
+    
+          <label class="cesped2" style="margin-left:110px ; position: absolute;">ETo</label>
+          <input type="image" src="img/cesped.png"  width="10%" value="formulario3" onclick="formulario3(this.value)">
+          
+          
+          <label class="cesped2" style="margin-left:190px ; position: absolute;">ETc</label>
+          <input type="image" src="img/soil1.png"  width="10%" value="formulario2" onclick="formulario2(this.value)">
+          
+
+          <label class="cesped" style="margin-left:300px ; position: absolute;">asd ds</label>
+          <input class="a" type="image" src="img/suelo.png"  width="10%" value="formulario3" onclick="formulario3(this.value)">
+          
+          
+          <input class="a" type="image" src="img/humedad.png"  width="10%" value="formulario4" onclick="formulario4(this.value)">
+          
+        </section>
+
+       
+
+
+
+
 
 
 
@@ -185,7 +163,42 @@ function formulario2(valor){
 }
 </script>
 
-       
+  <div class="formulario2" id="formulario2" style="display: none">
+    <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
+
+    <form id="formulario">
+      <h2>Soil Water Characteristics</h2>
+      <div class="">
+        <i class=""></i>
+        <input class=""  placeholder="Arena %" id="arena" type="number" min="0" max="100" step="any">
+      </div>
+    
+      <div class="">
+        <i class=""></i>
+        <input class="" placeholder="Arcilla %" id="arcilla" type="number" min="0" max="100" step="any">
+      </div>
+      
+      <div>
+        <i class="fa fa-key icon"></i>
+        <path d="M6 8.67h5.354c1.457 
+                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
+                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
+                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
+                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+      
+                  </path>
+        <input class="" placeholder="M. Organica % ASDA"  id="m_organica" type="number" min="0" max="20" step="any">
+      </div>
+    
+      
+    </form>
+    <button onclick="swc()"> Calcular</button>
+    <div id="respuesta">
+      respuesta soil water
+    </div>
+
+  </div>
+  <script src="./formulario2/app.js"></script> <!-- formulario2 swc -->          
   
 
 
@@ -219,43 +232,6 @@ function formulario2(valor){
   
     <div class="formulario2" id="formulario3" style="display: none">
       <button class="cerrarFormulario2" value="cerrar" onclick="formulario3(this.value)"></button>
-
-      <div class="formulario2" id="formulario2" style="display: none">
-        <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
-    
-        <form id="formulario">
-          <h2>Soil Water Characteristics</h2>
-          <div class="">
-            <i class=""></i>
-            <input class=""  placeholder="Arena %" id="arena" type="number" min="0" max="100" step="any">
-          </div>
-        
-          <div class="">
-            <i class=""></i>
-            <input class="" placeholder="Arcilla %" id="arcilla" type="number" min="0" max="100" step="any">
-          </div>
-          
-          <div>
-            <i class="fa fa-key icon"></i>
-            <path d="M6 8.67h5.354c1.457 
-                      0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
-                      11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
-                      18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
-                      2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
-          
-                      </path>
-            <input class="" placeholder="M. Organica % ASDA"  id="m_organica" type="number" min="0" max="20" step="any">
-          </div>
-        
-          
-        </form>
-        <button onclick="swc()"> Calcular</button>
-        <div id="respuesta">
-          respuesta soil water
-        </div>
-    
-      </div>
-      <script src="./formulario2/app.js"></script> <!-- formulario2 swc -->     
   
         <h1>conexcion ajax y php</h1>
         <input type="text" id="are" value="">

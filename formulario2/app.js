@@ -19,7 +19,7 @@
             res.innerHTML+=`
             <tr>
                 <td>${datos[property]}</td>
-                <td>${property}</td>
+                <td>${property} asd</td>
                 
             </tr>
             `

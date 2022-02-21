@@ -35,7 +35,6 @@ function humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF){
 function humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF){
     return humedad_33kPa($S , $C , $OM) -0.2 * ( humedadSaturada_0kPa($S , $C , $OM) - humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF) );
 }
-
 function humedadSaturada_33kPaAjustadaDensidad($S , $C , $OM , $DF){
     return humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF) - humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
 }
@@ -120,7 +119,6 @@ function aguaDisponible($S , $C , $OM , $DF){
   $b = humedad_1500kPa($S,$C,$OM);
   return $a-$b; 
 }
-
 function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
   /*
   S   = Arena ,   % fraccion de 0-1
@@ -152,7 +150,7 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
         $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
     }
     
-    $arr = array('capacidad de campo' => $h_33kPa_DF , 'punto de marchitez permanente' => $h_1500 , 'humedad a saturacion' => $hSat , 'agua Disponible' => $aguaDisponible, 'conductividad hidraulica saturada' => $Ksat,'densidad'=> $densidad);
+    $arr = array('capacidad de campo' => $h_33kPa_DF, "vol" , 'punto de marchitez permanente' => $h_1500 ,"vol", 'humedad a saturacion' => $hSat , 'agua Disponible' => $aguaDisponible, 'conductividad hidraulica saturada' => $Ksat,'densidad'=> $densidad);
     return $arr;
 }
 ?>

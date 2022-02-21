@@ -156,7 +156,7 @@ function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0 , $decim
       'humedad a saturacion'              => [$hSat           , "m3/m3" ] , 
       'agua Disponible'                   => [$aguaDisponible , "m3/m3" ] ,
       'conductividad hidraulica saturada' => [$Ksat           , "mm/hr" ] ,
-      'densidad'                          => [$densidad       , "gr/cm3"]
+      'densidad'                          => [$densidad       , "gr/cm3"] 
     );
 
     return $arr;

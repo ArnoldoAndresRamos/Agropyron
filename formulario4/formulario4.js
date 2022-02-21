@@ -2,7 +2,7 @@ function send_formulario4(){
     var dato = document.getElementById('dato').value;
     console.log(dato)
     let formulario4 = new XMLHttpRequest()
-    let url='https://aara.duckdns.org/agronono/formulario4/formulario4.php'
+    let url='../agronono/formulario4/formulario4.php'
     formulario4.open("POST",url,false);
     formulario4.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     formulario4.onreadystatechange = function(){

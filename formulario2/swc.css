@@ -1,6 +1,10 @@
 
 .resultado{
     width:50%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
 }
 .resultado tr{
     background-color:azure;

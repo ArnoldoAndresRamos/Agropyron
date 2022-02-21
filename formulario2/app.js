@@ -19,7 +19,8 @@
             res.innerHTML+=`
             <tr>
                 <td>${property}</td>
-                <td>${datos[property][0]} en ${datos[property][1]}</td>               
+                <td>${datos[property][0]}</td>
+                <td>${datos[property][1]}</td>               
                 
             </tr>
             `

@@ -1,3 +1,6 @@
 .resultado tr{
     background-color: red;
 }
+.resultado td{
+    background-color:blue;
+}

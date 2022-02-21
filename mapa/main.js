@@ -112,9 +112,9 @@ map.on('singleclick', function(evt){
 	//contenido.innerHTML = hdms[1]+"<br>"+hdms[0];
 	overlay.setPosition(coordenada);
 	
-	//document.getElementById('coordenadas').innerHTML = hdms[1]+","+hdms[0];
+	document.getElementById('coordenadas').innerHTML = hdms[1]+","+hdms[0];
 	document.getElementById('latitud_popup').value = hdms[0];
-	document.getElementById('latitud').value =  hdms[0];
+	document.getElementById('latitud').value =  hdms[1];
 	
 	var valor=document.getElementById('valor').value
 	

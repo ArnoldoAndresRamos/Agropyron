@@ -1,5 +1,5 @@
 <?php
-include('swc.php');
+include('../PHP/swc.php');
 
 $arena      = $_POST['arena']/100;
 $arcilla    = $_POST['arcilla']/100;

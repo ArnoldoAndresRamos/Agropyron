@@ -6,7 +6,7 @@
 
 	
  	let b = new XMLHttpRequest()
-    let url='https://aara.duckdns.org/agronono/PHP/post.php'
+    let url='../agronono/formulario2/post.php'
  	b.open('POST',url,true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
@@ -25,7 +25,10 @@
           }
 	}    
  	b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica);
+    console.log(arena+arcilla+m_organica)
  };
+
+
 
  /*
 var formulario = document.getElementById('formulario');

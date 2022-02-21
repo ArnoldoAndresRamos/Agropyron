@@ -185,42 +185,7 @@ function formulario2(valor){
 }
 </script>
 
-  <div class="formulario2" id="formulario2" style="display: none">
-    <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
-
-    <form id="formulario">
-      <h2>Soil Water Characteristics</h2>
-      <div class="">
-        <i class=""></i>
-        <input class=""  placeholder="Arena %" id="arena" type="number" min="0" max="100" step="any">
-      </div>
-    
-      <div class="">
-        <i class=""></i>
-        <input class="" placeholder="Arcilla %" id="arcilla" type="number" min="0" max="100" step="any">
-      </div>
-      
-      <div>
-        <i class="fa fa-key icon"></i>
-        <path d="M6 8.67h5.354c1.457 
-                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
-                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
-                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
-                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
-      
-                  </path>
-        <input class="" placeholder="M. Organica % ASDA"  id="m_organica" type="number" min="0" max="20" step="any">
-      </div>
-    
-      
-    </form>
-    <button onclick="swc()"> Calcular</button>
-    <div id="respuesta">
-      respuesta soil water
-    </div>
-
-  </div>
-  <script src="./formulario2/app.js"></script> <!-- formulario2 swc -->          
+       
   
 
 
@@ -254,6 +219,43 @@ function formulario2(valor){
   
     <div class="formulario2" id="formulario3" style="display: none">
       <button class="cerrarFormulario2" value="cerrar" onclick="formulario3(this.value)"></button>
+
+      <div class="formulario2" id="formulario2" style="display: none">
+        <button class="cerrarFormulario2" value="cerrar" onclick="formulario2(this.value)"></button>
+    
+        <form id="formulario">
+          <h2>Soil Water Characteristics</h2>
+          <div class="">
+            <i class=""></i>
+            <input class=""  placeholder="Arena %" id="arena" type="number" min="0" max="100" step="any">
+          </div>
+        
+          <div class="">
+            <i class=""></i>
+            <input class="" placeholder="Arcilla %" id="arcilla" type="number" min="0" max="100" step="any">
+          </div>
+          
+          <div>
+            <i class="fa fa-key icon"></i>
+            <path d="M6 8.67h5.354c1.457 
+                      0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
+                      11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
+                      18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
+                      2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
+          
+                      </path>
+            <input class="" placeholder="M. Organica % ASDA"  id="m_organica" type="number" min="0" max="20" step="any">
+          </div>
+        
+          
+        </form>
+        <button onclick="swc()"> Calcular</button>
+        <div id="respuesta">
+          respuesta soil water
+        </div>
+    
+      </div>
+      <script src="./formulario2/app.js"></script> <!-- formulario2 swc -->     
   
         <h1>conexcion ajax y php</h1>
         <input type="text" id="are" value="">

@@ -84,6 +84,8 @@
         <div id="popup-content"></div>
       </div>
 
+      <script src="./mapa/main.js"></script> <!-- SCRIPT MAPA-->
+
 
       <section class="Agronono" style="position:absolute; margin-top:5%;">
         <img src="img/planta-en-crecimiento.png" width="10%" >
@@ -130,94 +132,6 @@
 
 
 
-<!-- Formulario 1 -->
-
-  <script >
-  var i = 1
-  function formulario_ET0(valor){
-    var divA = document.getElementById('formulario_ET0');
-      if (valor=="formulario_ET0"){
-          divA.style.display="block";
-          i = i + 1;
-      }
-      if (valor=="cerrar"){
-          divA.style.display="none";
-          i=0
-      }
-      if(i>1){
-          divA.style.display="none";
-          i=0
-      }
-      console.log(i+valor)   
-  }
-  </script>
-      
-      
-      <div  class="contenedor" id="formulario_ET0" style=" display: none">
-        <button   class="cerrarFormulario" value="cerrar" onclick="formulario_ET0(this.value)"></button>
-        
-            <form  action="";>
-
-              <div class="row">
-                <div class="column">
-                <svg    viewBox="0 0 24 24"  style="width: 3%;">
-                  <title>velocidad del viento</title>
-                  <path d="M6 8.67h5.354c1.457 
-                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
-                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
-                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
-                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
-      
-                  </path>
-                </svg>
-                </div>
-                <div class="column">
-                    <label for="fname"> Velocidad del Viento</label>
-                </div>
-                 <div class="column">
-                    <input type="number" id="fname" name="velocidadViento" placeholder="m/s">
-                 </div>
-                </div>
-
-            <div>
-              <button>calcular</button>
-            </div>
-            </form>
-
-            <form>
-              <h2>Entrada de datos ET referencia</h2>
-              <div class="">
-                <i class=""><svg    viewBox="0 0 24 24"  style="width: 5%;background:red" >
-                  <title>velocidad del viento</title>
-                  <path d="M6 8.67h5.354c1.457 
-                  0 2.234-1.158 2.234-2.222S12.687 4.4 11.359 4.4c-.564 0-1.023.208-1.366.488M3
-                  11.67h15.54c1.457 0 2.235-1.158 2.235-2.222S19.873 7.4
-                  18.54 7.4c-.747 0-1.311.365-1.663.78M6 15.4h9.389c1.457 0 2.234 1.159 2.234 2.223 0 1.064-.901 2.048-2.234 2.048a2.153
-                  2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
-      
-                  </path>
-                </svg></i>
-                <input class="" type="text" placeholder="Username">
-              </div>
-            
-              <div class="">
-                <i class=""></i>
-                <input class="" type="text" placeholder="Email">
-              </div>
-              
-              <div>
-                <i class="fa fa-key icon"></i>
-                <input class="" type="password" placeholder="Password" >
-              </div>
-            
-              <button class="btn">Register</button>
-            </form>
-            
-        
-          </div>
-        <!-- fin formulario -->
-
-
 
 
 
@@ -257,12 +171,12 @@ function formulario2(valor){
       <h2>Soil Water Characteristics</h2>
       <div class="">
         <i class=""></i>
-        <input class=""  placeholder="Arena %" name="arena" type="number" min="0" max="100" step="any">
+        <input class=""  placeholder="Arena %" id="arena" type="number" min="0" max="100" step="any">
       </div>
     
       <div class="">
         <i class=""></i>
-        <input class="" placeholder="Arcilla %" name="arcilla" type="number" min="0" max="100" step="any">
+        <input class="" placeholder="Arcilla %" id="arcilla" type="number" min="0" max="100" step="any">
       </div>
       
       <div>
@@ -274,12 +188,12 @@ function formulario2(valor){
                   2.153 0 0 1-1.63-.742" stroke-width="2" stroke="currentColor" stroke-linecap="round" fill="none">
       
                   </path>
-        <input class="" placeholder="M. Organica %"  name="m_organica" type="number" min="0" max="20" step="any">
+        <input class="" placeholder="M. Organica %"  id="m_organica" type="number" min="0" max="20" step="any">
       </div>
     
       
     </form>
-    <button onclick="swc()"> Register</button>
+    <button onclick="swc()"> Calcular</button>
     <div id="respuesta">
       respuesta soil water
     </div>
@@ -413,7 +327,6 @@ function formulario2(valor){
   
   
 
-  <script src="./mapa/main.js"></script>  
   <!-- Optional JavaScript; choose one of the two! -->
   <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

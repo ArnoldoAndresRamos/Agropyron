@@ -1,8 +1,8 @@
  function swc(){
 	
-    let arena = document.getElementsByName('arena').value;
-    let arcilla = document.getElementsByName('arcilla').value;
-    let m_organica = document.getElementsByName('m_organica').value;
+    let arena = document.getElementById('arena').value;
+    let arcilla = document.getElementById('arcilla').value;
+    let m_organica = document.getElementById('m_organica').value;
 
 	console.log(arena+arcilla+m_organica)
  	let b = new XMLHttpRequest()

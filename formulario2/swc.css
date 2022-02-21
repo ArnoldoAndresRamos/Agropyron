@@ -1,9 +1,18 @@
+
+.resultado{
+    width:50%;
+}
 .resultado tr{
     background-color:azure;
-    border-top: 1px;
+    border-top: 2px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 .resultado td {
     background-color:white;
     width:50%;
+}
+@media screen and (max-width:500px){
+    .resultado{
+        width:100%;
+    }
 }

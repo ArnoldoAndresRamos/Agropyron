@@ -18,8 +18,8 @@
             //console.log(`${property} ${datos[property]}`);
             res.innerHTML+=`
             <tr>
-                <td>sdadsa</td>
-                <td>${datos[property]}</td>
+                <td>${property}</td>
+                <td>${datos[property][0]}</td>
                 
                 
             </tr>

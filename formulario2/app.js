@@ -4,7 +4,7 @@
     let arcilla = document.getElementsByName('arcilla').value;
     let m_organica = document.getElementsByName('m_organica').value;
 
-	
+	console.log(arena+arcilla+m_organica)
  	let b = new XMLHttpRequest()
     let url='../agronono/formulario2/post.php'
  	b.open('POST',url,true);
@@ -25,7 +25,7 @@
           }
 	}    
  	b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica);
-    console.log(arena+arcilla+m_organica)
+    
  };
 
 

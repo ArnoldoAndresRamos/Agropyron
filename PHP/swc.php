@@ -136,28 +136,29 @@ function aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE){
 
 
 
-function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0){
+function soil_water_characteristics($S , $C , $OM , $DF=1, $RW=0, $CE=0 , $decimales=5){
     
     //$hSat_33kPa_DF   = humedadSaturada_33kPaAjustadaDensidad( $S , $C , $OM , $DF );
-    $h_33kPa_DF      = humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF);
-    $h_1500          = humedad_1500kPa( $S , $C , $OM );
-    $hSat            = humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF );
-    $aguaDisponible  = aguaDisponible($S , $C , $OM , $DF );
-    $Ksat            = conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW );
-    $densidad        = densidadAjustada_gcm3( $S , $C , $OM , $DF );  
+    $h_33kPa_DF      = round( humedad_33kPaAjustadaDensidad($S , $C , $OM , $DF), $decimales);
+    $h_1500          = round( humedad_1500kPa( $S , $C , $OM ) , $decimales);
+    $hSat            = round( humedadSaturada_0kPaAjustadaDensidad($S , $C , $OM , $DF ), $decimales);
+    $aguaDisponible  = round( aguaDisponible($S , $C , $OM , $DF )  , $decimales );
+    $Ksat            = round( conductividadHidraulicaSaturada( $S , $C , $OM , $DF , $RW ) , $decimales );
+    $densidad        = round( densidadAjustada_gcm3( $S , $C , $OM , $DF ) , $decimales ) ;  
 
     if ($CE!=0){
         $aguaDisponible = aguaDisponibleAjustada_CE($S , $C , $OM , $DF , $CE);
     }
     
     $arr = array(
-      'capacidad de campo' => [$h_33kPa_DF, "m3/m3"] ,
-      'punto de marchitez permanente' => [$h_1500, "m3/m3"] ,
-      'humedad a saturacion' => [$hSat, "m3/m3"] , 
-      'agua Disponible' => $aguaDisponible, 
-      'conductividad hidraulica saturada' => $Ksat,
-      'densidad'=> $densidad);
-      
+      'capacidad de campo'                => [$h_33kPa_DF     , "m3/m3" ] ,
+      'punto de marchitez permanente'     => [$h_1500         , "m3/m3" ] ,
+      'humedad a saturacion'              => [$hSat           , "m3/m3" ] , 
+      'agua Disponible'                   => [$aguaDisponible , "m3/m3" ] ,
+      'conductividad hidraulica saturada' => [$Ksat           , "mm/hr" ] ,
+      'densidad'                          => [$densidad       , "gr/cm3"]
+    );
+
     return $arr;
 }
 ?>

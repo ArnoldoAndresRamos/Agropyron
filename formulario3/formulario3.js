@@ -9,7 +9,7 @@ function sendRequest1(){
     
 	
  	let b = new XMLHttpRequest()
-    let url='https://aara.duckdns.org/agronono/formulario3/formulario3.php'
+    let url='../agronono/formulario3/formulario3.php'
  	b.open('POST',url,true);
  	b.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   	b.onreadystatechange = function(){
@@ -28,9 +28,8 @@ function sendRequest1(){
           }
 	}    
     console.log(are,arc,m_o);
- 	b.send("s="+i+"&m="+e);
-    //b.send("arena="+arena);
-    //console.log(b.send("arena="+arena+"&arcilla="+arcilla+"&m_organica="+m_organica))
+ 	b.send("s="+i+"&m="+e+"&are="+are+"&arc="+arc+"&m_o="+m_o);
+    
 };
 
 

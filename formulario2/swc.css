@@ -1,9 +1,11 @@
-#formulario2{
-    background-color: red;
+.input_datos_duelo{
+    background-color: aqua;
 }
+
 .resultado{
     width:50%;
     height:50%;
+    background-color: blue;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid #ddd;

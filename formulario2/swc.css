@@ -1,4 +1,6 @@
-
+.formulario2{
+    background-color: red;
+}
 .resultado{
     width:50%;
     height:50%;
@@ -6,6 +8,7 @@
     border-spacing: 0;
     border: 1px solid #ddd;
     overflow-x:auto;
+    position: absolute;
     float:left;
 }
 

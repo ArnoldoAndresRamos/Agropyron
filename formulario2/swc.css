@@ -5,11 +5,14 @@
 
 .resultado{
     width:50%;
+    height:50%;
     background-color: blue;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid #ddd;
     overflow-x:auto;
+    position: absolute;
+    float:left;
 }
 
 .resultado th{

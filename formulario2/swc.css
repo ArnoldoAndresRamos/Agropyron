@@ -11,12 +11,10 @@
     border-spacing: 0;
     border: 1px solid #ddd;
     overflow-x:auto;
-}
-
-.resultado th{
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-
 }
+
+
 
 .resultado th, td {
     text-align: left;

@@ -1,18 +1,16 @@
 .input_datos_duelo{
     background-color: aqua;
     width: 50%;
+    height: 100%;
 }
 
 .resultado{
     width:50%;
-    height:50%;
     background-color: blue;
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid #ddd;
     overflow-x:auto;
-    position: absolute;
-    float:left;
 }
 
 .resultado th{
@@ -35,7 +33,10 @@ tr:nth-child(even){background-color: #f2f2f2}
     background-color:white;
     width:50%;
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:600px){
+    .input_datos_duelo{
+        width: 100%;    
+    }
     .resultado{
         width:100%;
     }

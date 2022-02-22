@@ -1,7 +1,7 @@
 
 
 
-.formulario{
+.formulario2{
    margin-top: 0%;
    max-width: 100%;
    width: 100%;
@@ -14,7 +14,7 @@
    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.cerrarFormulario{
+.cerrarFormulario2{
   text-decoration: none;
   position: absolute;
   float: left;
@@ -24,7 +24,7 @@
   width: 10%;
   height: 10%;
 }
-.cerrarFormulario:after {
+.cerrarFormulario2:after {
   content: "X";
 }
 

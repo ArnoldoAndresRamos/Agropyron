@@ -26,8 +26,7 @@ function numDia($fecha){
 	
 };
 
-echo numDia($fecha)."<br>";
-$Dia_Juliano = numDia($fecha)."<br>";
+echo numDia(20/01/2000)."<br>";
 
 
 

@@ -29,6 +29,61 @@ function numDia($fecha){
 echo numDia(20/01/2000)."<br>";
 
 
+function temperatura_media($Tmax , $Tmin){
+    return ($Tmax+$Tmin)/2;
+}
+
+function curva_presion_de_vapor( $Tmax , $Tmin ){
+    $Tmedia = temperatura_media($Tmax,$Tmin);
+    $a = 4098 *( 0.6108 *( exp((17.27*$Tmedia)/($Tmedia+237.3)) ) ) ;
+    $b = pow(($Tmedia+237.3),2);
+    return  $a/$b; 
+}
+echo curva_presion_de_vapor(25,20);
+
+function presion_atmosferica( $altitud ){
+    return 101.3 * pow( (293-(0.0065*$altitud))/293 , 5,26);
+}
+
+function constante_pscicrometrica($altitud){
+    return 0.000665 * presion_atmosferica($altitud);
+}
+
+function deficit_de_Presión_de_vapor($Tmax , $Tmin , $HRmax ,$HRmin){
+    $e0_Tmax=0.6108*exp((17.27*$Tmax)/($Tmax+237.3)); // KPa
+	$e0_Tmin=0.6108*exp((17.27*$Tmin)/($Tmin+237.3)); // KPa
+    $es= ($e0_Tmax + $e0_Tmin)/2; //KPa
+    $ea = ((($e0_Tmin * $HRmax)/100)+(($e0_Tmax * $HRmin)/100))/2; //KPa
+    return $es-$ea
+}
+
+function inverso_distancia_tierra_sol($numero_dia){
+    return 1 + 0.033 * cos((2 * 3.14159265358979323846 / 365)*$numero_dia);
+}
+
+// δ declinación solar en Radianes (rad)
+function declinacion_solar($numero_dia){
+    return 0.409 * sin(((2 * 3.14159265358979323846 / 365)*$Dia_Juliano) - 1.39 );
+}
+
+// ωs ángulo solar de puesta de Sol en Radianes (rad)
+function angulo_solar_de_puesta_de_sol($latitud , $numero_dia){
+    $declinacion_solar = declinacion_solar($numero_dia) 
+    return acos(-tan($latitud * 3.14159265358979323846 /180 )* tan($declinacion_solar)); 
+
+}
+function radiacion_solar($latitud , $numero_dia){
+
+    $inverso_distancia_tierra_sol = inverso_distancia_tierra_sol($numero_dia);
+    $declinacion_solar = declinacion_solar($numero_dia);
+    $angulo_solar_de_puesta_de_sol = angulo_solar_de_puesta_de_sol($latitud , $numero_dia);
+    
+    $se = sin($Latitud*3.14159/180 ) * sin($declinacion_solar); // seno(latitud)*seno(δ) 
+	$co = cos($Latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
+	$Ra = (24*60/3.14159265358979323846)*0.082*$dr*($ws* $se + $co*sin($ws)); //en MJm-2día-1
+}
+
+
 
 function ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n ){
 	
@@ -37,24 +92,11 @@ function ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u
 	
 	
 	// Temperatura media Tmedia °C
-    function temperatura_media($Tmax , $Tmin){
-        return ($Tmax+$Tmin)/2;
-    }
-
+ 
 	$Tmedia = ($Tmax+$Tmin)/2;
 
-	//  Δ (Pen curva de presión de vapor) en kPa°C-1
-	/*		(4098 [0.6108 e([17,27*Tmedia]/[Tmedia+237,3])])  
-	ecuación	________________________________________________
-					(Tmedia+237,3)^2                       */
-	
 
-    function curva_presion_de_vapor( $Tmax , $Tmin ){
-        $Tmedia = temperatura_media($Tmax,$Tmin);
-        $a = 4098 *( 0.6108 *( exp((17.27*$Tmedia)/($Tmedia+237.3)) ) ) ;
-        $b = pow(($Tmedia+237.3),2);
-        return  $a/$b; 
-    }
+
     $Tmax=25;
     $Tmin=20;
     
@@ -65,15 +107,13 @@ function ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u
 	$r=$c/$d;
     
 	//echo "Pendiente de la curva de preción de vapor ".$r."<br>".
-    echo curva_presion_de_vapor(25,20);
+    
 
 
 
 	//    P  Presión atmosférica  en KPa
 
-    function presion_atmosferica( $Altitud ){
-        return 101.3 * pow( (293-(0.0065*$Altitud))/293 , 5,26);
-    }
+ 
 
 
 	$w=(293-(0.0065*$Altitud))/293;
@@ -84,10 +124,7 @@ function ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u
 
 	//    γ Constante pscicrométrica en kPa°C-1
 	$y = 0.000665*$P;  // $P es Presión Atmosférica
-    function constante_pscicrometrica($Altitud){
-        $c = 0.000665;
-        return $c * presion_atmosferica($Altitud);
-    }
+    
 	//echo "Constante psicrometrica ".$y."<br>";
 
 	$u2_1 = 1+0.34*$u2;//   (1+0,34u2)
@@ -187,9 +224,18 @@ function ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u
 
 	/*    Resultado de calculo de Evapotranspiracion de referencia  en mm/día  */
 	$ETo = ($zr * $Rn_G_mm)+($zy * $Tmedia_u2 *$es_ea);
-	echo $ETo; //"mm/día"."<br>"
+	return $ETo; //"mm/día"."<br>"
 
 }
+$Tmax = 25;
+$Tmin = 20;
+$HRmax= 60;
+$HRmin= 20;
+$Latitud= -71.2;
+$Altitud=170;
+$Dia_Juliano = 33;
+$u2=2.3;
+$n = 9;
+echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n );
 
-ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n );
 ?>

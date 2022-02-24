@@ -25,7 +25,7 @@ function numDia($fecha){
 	return $num_dia;
 	
 };
-
+$fecha = "20-01-2000";
 echo numDia(20-01-2000)."<br>";
 
 

@@ -54,7 +54,7 @@ function deficit_de_Presión_de_vapor($Tmax , $Tmin , $HRmax ,$HRmin){
 	$e0_Tmin=0.6108*exp((17.27*$Tmin)/($Tmin+237.3)); // KPa
     $es= ($e0_Tmax + $e0_Tmin)/2; //KPa
     $ea = ((($e0_Tmin * $HRmax)/100)+(($e0_Tmax * $HRmin)/100))/2; //KPa
-    return $es-$ea
+    return $es-$ea;
 }
 
 function inverso_distancia_tierra_sol($numero_dia){

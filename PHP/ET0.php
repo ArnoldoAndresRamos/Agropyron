@@ -68,7 +68,7 @@ function declinacion_solar($numero_dia){
 
 // ωs ángulo solar de puesta de Sol en Radianes (rad)
 function angulo_solar_de_puesta_de_sol($latitud , $numero_dia){
-    $declinacion_solar = declinacion_solar($numero_dia) 
+    $declinacion_solar = declinacion_solar($numero_dia); 
     return acos(-tan($latitud * 3.14159265358979323846 /180 )* tan($declinacion_solar)); 
 
 }

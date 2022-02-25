@@ -38,7 +38,6 @@ function curva_presion_de_vapor( $Tmax , $Tmin ){
     $b = pow(($Tmedia+237.3),2);
     return  $a/$b; 
 }
-echo curva_presion_de_vapor(25,20);
 
 function presion_atmosferica( $altitud ){
     return 101.3 * pow( (293-(0.0065*$altitud))/293 , 5,26);
@@ -62,7 +61,7 @@ function inverso_distancia_tierra_sol($numero_dia){
 
 // δ declinación solar en Radianes (rad)
 function declinacion_solar($numero_dia){
-    return 0.409 * sin(((2 * 3.14159265358979323846 / 365)*$Dia_Juliano) - 1.39 );
+    return 0.409 * sin(((2 * 3.14159265358979323846 / 365)*$numero_dia) - 1.39 );
 }
 
 // ωs ángulo solar de puesta de Sol en Radianes (rad)

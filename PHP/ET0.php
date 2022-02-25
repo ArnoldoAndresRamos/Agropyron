@@ -25,8 +25,7 @@ function numDia($fecha){
 	return $num_dia;
 	
 };
-$fecha = "20-01-2000";
-//echo numDia(20-01-2000)."<br>";
+
 
 
 function temperatura_media($Tmax , $Tmin){
@@ -70,17 +69,17 @@ function declinacion_solar($numero_dia){
 function angulo_solar_de_puesta_de_sol($latitud , $numero_dia){
     $declinacion_solar = declinacion_solar($numero_dia); 
     return acos(-tan($latitud * 3.14159265358979323846 /180 )* tan($declinacion_solar)); 
-
 }
+
 function radiacion_solar($latitud , $numero_dia){
 
-    $inverso_distancia_tierra_sol = inverso_distancia_tierra_sol($numero_dia);
-    $declinacion_solar = declinacion_solar($numero_dia);
-    $angulo_solar_de_puesta_de_sol = angulo_solar_de_puesta_de_sol($latitud , $numero_dia);
+    $inverso_distancia_tierra_sol   = inverso_distancia_tierra_sol($numero_dia);
+    $declinacion_solar              = declinacion_solar($numero_dia);
+    $angulo_solar_de_puesta_de_sol  = angulo_solar_de_puesta_de_sol($latitud , $numero_dia);
     
     $se = sin($Latitud*3.14159/180 ) * sin($declinacion_solar); // seno(latitud)*seno(δ) 
 	$co = cos($Latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
-	$Ra = (24*60/3.14159265358979323846)*0.082*$dr*($ws* $se + $co*sin($ws)); //en MJm-2día-1
+	return (24*60/3.14159265358979323846)*0.082 * $inverso_distancia_tierra_sol * ($angulo_solar_de_puesta_de_sol* $se + $co*sin( $angulo_solar_de_puesta_de_sol )); //en MJm-2día-1
 }
 
 
@@ -236,6 +235,6 @@ $Altitud=170;
 $Dia_Juliano = 33;
 $u2=2.3;
 $n = 9;
-echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n );
-
+echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n )."\n";
+echo radiacion_solar($Latitud,$Dia_Juliano);
 ?>

@@ -235,6 +235,7 @@ $Altitud=170;
 $Dia_Juliano = 33;
 $u2=2.3;
 $n = 9;
-echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n )."\n";
-echo radiacion_solar($Latitud,33)." \n ";
+echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n )." anda a m+laar \n";
+
+echo ", Ra:".radiacion_solar($Latitud,33)." \n ";
 ?>

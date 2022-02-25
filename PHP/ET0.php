@@ -76,8 +76,8 @@ function radiacion_solar($latitud , $numero_dia){
     $declinacion_solar              = declinacion_solar($numero_dia);
     $angulo_solar_de_puesta_de_sol  = angulo_solar_de_puesta_de_sol($latitud , $numero_dia);
     
-    $se = sin($Latitud*3.14159/180 ) * sin($declinacion_solar); // seno(latitud)*seno(δ) 
-	$co = cos($Latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
+    $se = sin($latitud*3.14159/180 ) * sin($declinacion_solar); // seno(latitud)*seno(δ) 
+	$co = cos($latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
 	return (24*60/3.14159265358979323846)*0.082 * $inverso_distancia_tierra_sol * ($angulo_solar_de_puesta_de_sol* $se + $co*sin( $angulo_solar_de_puesta_de_sol )); //en MJm-2día-1
 }
 

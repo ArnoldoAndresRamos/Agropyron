@@ -236,5 +236,5 @@ $Dia_Juliano = 33;
 $u2=2.3;
 $n = 9;
 echo ETo($Tmax, $Tmin, $HRmax,  $HRmin, $Latitud, $Altitud, $Dia_Juliano, $u2, $n )."\n";
-echo radiacion_solar($Latitud,$Dia_Juliano);
+echo radiacion_solar($Latitud,$Dia_Juliano)." \n ";
 ?>

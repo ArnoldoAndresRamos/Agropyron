@@ -34,8 +34,8 @@ function temperatura_media($Tmax , $Tmin){
 
 function curva_presion_de_vapor( $Tmax , $Tmin ){
     $Tmedia = temperatura_media($Tmax,$Tmin);
-    $a = 4098 *( 0.6108 *( exp((17.27*$Tmedia)/($Tmedia+237.3)) ) ) ;
-    $b = pow(($Tmedia+237.3),2);
+    $a      = 4098 *( 0.6108 *( exp((17.27*$Tmedia)/($Tmedia+237.3)) ) ) ;
+    $b      = pow(($Tmedia+237.3),2);
     return  $a/$b; 
 }
 
@@ -48,10 +48,10 @@ function constante_pscicrometrica($altitud){
 }
 
 function deficit_de_Presión_de_vapor($Tmax , $Tmin , $HRmax ,$HRmin){
-    $e0_Tmax=0.6108*exp((17.27*$Tmax)/($Tmax+237.3)); // KPa
-	$e0_Tmin=0.6108*exp((17.27*$Tmin)/($Tmin+237.3)); // KPa
-    $es= ($e0_Tmax + $e0_Tmin)/2; //KPa
-    $ea = ((($e0_Tmin * $HRmax)/100)+(($e0_Tmax * $HRmin)/100))/2; //KPa
+    $e0_Tmax = 0.6108*exp((17.27*$Tmax)/($Tmax+237.3));  // KPa
+    $e0_Tmin = 0.6108*exp((17.27*$Tmin)/($Tmin+237.3));  // KPa
+    $es      = ($e0_Tmax + $e0_Tmin)/2; //KPa
+    $ea      = ((($e0_Tmin * $HRmax)/100)+(($e0_Tmax * $HRmin)/100))/2; //KPa
     return $es-$ea;
 }
 
@@ -77,8 +77,8 @@ function radiacion_solar($latitud , $numero_dia){
     $angulo_solar_de_puesta_de_sol  = angulo_solar_de_puesta_de_sol($latitud , $numero_dia);
     
     $se = sin($latitud*3.14159/180 ) * sin($declinacion_solar); // seno(latitud)*seno(δ) 
-	$co = cos($latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
-	return (24*60/3.14159265358979323846)*0.082 * $inverso_distancia_tierra_sol * ($angulo_solar_de_puesta_de_sol* $se + $co*sin( $angulo_solar_de_puesta_de_sol )); //en MJm-2día-1
+    $co = cos($latitud*3.14159/180 ) * cos($declinacion_solar); //cos(latitud)*cos(δ)
+    return (24*60/3.14159265358979323846)*0.082 * $inverso_distancia_tierra_sol * ($angulo_solar_de_puesta_de_sol* $se + $co*sin( $angulo_solar_de_puesta_de_sol )); //en MJm-2día-1
 }
 
 
